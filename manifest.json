@@ -1,0 +1,26 @@
+{
+  "name": "SEEN",
+  "short_name": "SEEN",
+  "id": "./index.html",
+  "scope": "./",
+  "description": "ณัฐนันท์ ตรีทศ (ซีน) มีความรู้และทักษะด้านการประกอบคอมพิวเตอร์ เลือกและติดตั้งอุปกรณ์ให้เหมาะสมกับการใช้งาน มีทักษะด้านระบบไฟฟ้า สามารถเดินสายไฟและต่อวงจรได้อย่างเป็นระบบ พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อย่างต่อเนื่อง",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

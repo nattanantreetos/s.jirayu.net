@@ -1,0 +1,16 @@
+/* Photo cards use a compact handoff, without moving the portrait hit area. */
+/* The reveal controller owns entrance motion; avoid a second CSS tween on it. */
+.bento>.scroll-reveal-item.load-ready,html.page-loading .bento>.scroll-reveal-item.load-ready{opacity:1;transform:none;transition:none}
+.portfolio-hero .avatar{perspective:1200px;cursor:zoom-in;touch-action:manipulation}
+.portfolio-hero .avatar-slide{opacity:.76;transform:translate(12px,12px) rotate(3deg) scale(.97);border:1px solid #ffffff2d;box-shadow:0 12px 28px #0006;backface-visibility:hidden;transition:none}
+.portfolio-hero .avatar-slide.active{opacity:1;transform:translate(0,0) rotate(-.8deg) scale(1);box-shadow:0 24px 50px #0008;z-index:2}
+.portfolio-hero .avatar::after{content:attr(data-profile-page);position:absolute;z-index:4;bottom:18px;left:18px;padding:7px 11px;border:1px solid #ffffff35;border-radius:999px;background:#111d;color:#fff;font:500 10px/1.2 'Segoe UI',sans-serif;letter-spacing:1.5px;pointer-events:none}
+.section-step{position:fixed;z-index:90;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));display:grid;place-items:center;width:54px;height:54px;padding:0;border:1px solid #ffffff66;border-radius:50%;background:linear-gradient(145deg,#fff,#d5d5d5);color:#111;box-shadow:0 8px 28px #0005;cursor:pointer;touch-action:manipulation;transition:transform 220ms cubic-bezier(.22,1,.36,1),box-shadow 220ms ease,opacity 180ms ease}
+.section-step svg{width:22px;height:22px;pointer-events:none;transition:transform 380ms cubic-bezier(.22,1,.36,1)}
+.section-step.is-top svg{transform:rotate(180deg)}
+.section-step:focus-visible{outline:2px solid #fff;outline-offset:5px}
+.section-step:active{transform:scale(.94)}
+.section-step[hidden],html.modal-active .section-step{display:none!important}
+@media(hover:hover){.section-step:hover{transform:translateY(-3px);box-shadow:0 12px 34px #0008}}
+@media(max-width:700px){.portfolio-hero .avatar-slide.active{transform:none}.portfolio-hero .avatar::after{bottom:14px;left:14px}.section-step{width:48px;height:48px;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){.portfolio-hero .avatar-slide{transform:translate(4px,4px)}.portfolio-hero .avatar-slide.active{transform:none}.section-step,.section-step svg{transition:none}.section-step:hover,.section-step:active{transform:none}}
