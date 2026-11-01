@@ -3,15 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 const {loadPolicy, createSecurity, baseHeaders, documentPolicy, safeStaticPath, contains} = require('./security.cjs');
-let gameHandler;
-function handleGame(...args) {
-  gameHandler ||= require('../game/server/auth.cjs')();
-  return gameHandler(...args);
-}
 
 const port = Number(process.env.PORT || 3000);
+const bindAddress = process.env.BIND || '0.0.0.0';
 const root = __dirname;
-const gameRoot = path.resolve(root, '..', 'game', 'public');
 let stopping = false;
 const activeSockets = new Set();
 const textExtensions = new Set(['.css', '.html', '.js', '.json', '.svg', '.txt', '.xml']);
@@ -126,7 +121,6 @@ function createFileStream(filePath, range) {
 function stopServer() {
   if (stopping) return;
   stopping = true;
-  gameHandler?.close();
   server.close(() => process.exit(0));
   server.closeAllConnections?.();
   for (const socket of activeSockets) socket.destroy();
@@ -162,22 +156,8 @@ const server = http.createServer({maxHeaderSize: 16 * 1024}, (request, response)
     return;
   }
 
-  const gameApi = pathname.startsWith('/game/api/') || pathname.startsWith('/game/auth/');
-  if (security.limited(request, gameApi ? 'game' : 'site', gameApi ? 1200 : 1024, gameApi ? 600 : 256)) {
+  if (security.limited(request, 'site', 1024, 256)) {
     response.setHeader('Retry-After', '2'); sendError(response, 429, 'Too many requests'); return;
-  }
-  if (pathname === '/game') {
-    setSecurityHeaders(response);
-    response.writeHead(308, { Location: '/game/' }).end();
-    return;
-  }
-  if (pathname.startsWith('/game/api/') || pathname.startsWith('/game/auth/')) {
-    handleGame(request, response, pathname);
-    return;
-  }
-  if (['/game-auth.js','/game-online.cjs'].includes(pathname.replace(/\\/g, '/').toLowerCase())) {
-    sendError(response, 404, 'Not found');
-    return;
   }
 
   if (pathname.startsWith('/api/')) {
@@ -191,15 +171,11 @@ const server = http.createServer({maxHeaderSize: 16 * 1024}, (request, response)
     return;
   }
 
-  // Keep the existing public URL while serving game files from their own folder.
-  const isGameAsset = pathname.startsWith('/game/');
-  const staticRoot = isGameAsset ? gameRoot : root;
-  const relativePath = isGameAsset ? pathname === '/game/' ? 'index.html' : pathname.slice('/game/'.length)
-    : pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
+  const relativePath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
   if (!safeStaticPath(relativePath)) {sendError(response, 404, 'Not found'); return;}
-  const filePath = path.resolve(staticRoot, relativePath);
+  const filePath = path.resolve(root, relativePath);
 
-  if (path.relative(staticRoot, filePath).startsWith('..') || path.isAbsolute(path.relative(staticRoot, filePath))) {
+  if (path.relative(root, filePath).startsWith('..') || path.isAbsolute(path.relative(root, filePath))) {
     sendError(response, 403, 'Forbidden');
     return;
   }
@@ -215,7 +191,7 @@ const server = http.createServer({maxHeaderSize: 16 * 1024}, (request, response)
 
   fs.realpath(filePath, (realError, resolvedFile) => {
     const privatePaths = ['private', 'tests'].map(name => path.resolve(root, name));
-    if (realError || !contains(staticRoot, resolvedFile) || privatePaths.some(dir => contains(dir, resolvedFile))) {sendError(response, 404, 'Not found'); return;}
+    if (realError || !contains(root, resolvedFile) || privatePaths.some(dir => contains(dir, resolvedFile))) {sendError(response, 404, 'Not found'); return;}
   fs.stat(resolvedFile, async (error, stats) => {
     if (error || !stats.isFile()) {
       sendError(response, 404, 'Not found');
@@ -354,10 +330,10 @@ for (const name of ['index.html', 'site.css', 'website-runtime.js', 'ui-polish.j
   });
 }
 
-server.listen(port, '0.0.0.0', () => {
+server.listen(port, bindAddress, () => {
   const localUrl = `http://localhost:${port}`;
   console.log(`SEEN website is running at ${localUrl}`);
-  console.log(`Network access is enabled on port ${port}.`);
+  console.log(`Network access is enabled on ${bindAddress}:${port}.`);
 });
 
 for (const signal of ['SIGINT', 'SIGTERM']) {

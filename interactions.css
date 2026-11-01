@@ -1,16 +1,551 @@
-/* Photo cards use a compact handoff, without moving the portrait hit area. */
-/* The reveal controller owns entrance motion; avoid a second CSS tween on it. */
-.bento>.scroll-reveal-item.load-ready,html.page-loading .bento>.scroll-reveal-item.load-ready{opacity:1;transform:none;transition:none}
-.portfolio-hero .avatar{perspective:1200px;cursor:zoom-in;touch-action:manipulation}
-.portfolio-hero .avatar-slide{opacity:.76;transform:translate(12px,12px) rotate(3deg) scale(.97);border:1px solid #ffffff2d;box-shadow:0 12px 28px #0006;backface-visibility:hidden;transition:none}
-.portfolio-hero .avatar-slide.active{opacity:1;transform:translate(0,0) rotate(-.8deg) scale(1);box-shadow:0 24px 50px #0008;z-index:2}
-.portfolio-hero .avatar::after{content:attr(data-profile-page);position:absolute;z-index:4;bottom:18px;left:18px;padding:7px 11px;border:1px solid #ffffff35;border-radius:999px;background:#111d;color:#fff;font:500 10px/1.2 'Segoe UI',sans-serif;letter-spacing:1.5px;pointer-events:none}
-.section-step{position:fixed;z-index:90;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));display:grid;place-items:center;width:54px;height:54px;padding:0;border:1px solid #ffffff66;border-radius:50%;background:linear-gradient(145deg,#fff,#d5d5d5);color:#111;box-shadow:0 8px 28px #0005;cursor:pointer;touch-action:manipulation;transition:transform 220ms cubic-bezier(.22,1,.36,1),box-shadow 220ms ease,opacity 180ms ease}
+/* Circular Dual Avatar (Main + Secondary Top-Right) */
+.portfolio-hero .avatar.avatar-dual {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1/3;
+  width: 290px;
+  height: 290px;
+  align-self: center;
+  justify-self: center;
+  margin-top: 35px;
+  perspective: none !important;
+  cursor: default !important;
+  overflow: visible !important;
+  isolation: isolate;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.portfolio-hero .avatar.avatar-dual::after {
+  display: none !important;
+  content: none !important;
+}
+.avatar-circle.avatar-main {
+  width: 100%;
+  height: 100%;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 3px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7), 0 0 24px rgba(255, 255, 255, 0.08) !important;
+  cursor: zoom-in;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  z-index: 2;
+  background: #000;
+}
+.avatar-circle.avatar-main:hover {
+  transform: scale(1.025);
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 32px rgba(255, 255, 255, 0.15) !important;
+}
+.avatar-circle.avatar-main .avatar-slide {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  transform: none !important;
+  opacity: 1 !important;
+  display: block !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.avatar-circle.avatar-sub {
+  position: absolute !important;
+  top: -95px !important;
+  right: 0px !important;
+  width: 104px !important;
+  height: 104px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 3px solid #000000 !important;
+  outline: 2px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.85), 0 0 18px rgba(96, 165, 250, 0.3) !important;
+  cursor: zoom-in;
+  z-index: 5 !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), outline-color 0.35s ease, box-shadow 0.35s ease;
+  background: #000;
+}
+.avatar-circle.avatar-sub:hover {
+  transform: translateY(-3px) scale(1.08) !important;
+  outline-color: #60a5fa !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.9), 0 0 24px rgba(96, 165, 250, 0.5) !important;
+}
+.avatar-circle.avatar-sub .avatar-slide {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: none !important;
+  opacity: 1 !important;
+  display: block !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+@media (max-width: 700px) {
+  .portfolio-facts {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px 24px !important;
+    margin-top: 36px !important;
+    padding-top: 26px !important;
+    margin-bottom: 24px !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .portfolio-hero .avatar.avatar-dual {
+    grid-column: 1;
+    grid-row: 1;
+    width: 200px;
+    height: 200px;
+    margin: 75px auto 16px !important;
+  }
+  .avatar-circle.avatar-sub {
+    width: 70px !important;
+    height: 70px !important;
+    top: -68px !important;
+    right: 4px !important;
+  }
+}
+
+/* Interactive Hover & Scroll Effects */
+.download-platform .btn {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease !important;
+}
+.download-platform .btn:hover {
+  transform: translateY(-7px) scale(1.01) !important;
+}
+#autosystem:hover {
+  border-color: rgba(96, 205, 255, 0.45) !important;
+  box-shadow: 0 16px 36px rgba(0, 150, 255, 0.16), 0 0 20px rgba(96, 205, 255, 0.1) !important;
+}
+#paintstudio:hover {
+  border-color: rgba(192, 132, 252, 0.45) !important;
+  box-shadow: 0 16px 36px rgba(168, 85, 247, 0.16), 0 0 20px rgba(192, 132, 252, 0.1) !important;
+}
+#gps-cam:hover {
+  border-color: rgba(61, 220, 132, 0.45) !important;
+  box-shadow: 0 16px 36px rgba(61, 220, 132, 0.16), 0 0 20px rgba(61, 220, 132, 0.1) !important;
+}
+.download-platform .btn:hover .download-arrow {
+  animation: downloadArrowBounce 0.6s ease infinite alternate;
+}
+@keyframes downloadArrowBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Skills Tag Interactive Micro-Animations */
+.tag {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease !important;
+  cursor: pointer;
+}
+.tag:hover {
+  transform: translateY(-4px) scale(1.04) !important;
+  color: #fff !important;
+}
+.tag:nth-child(1):hover {
+  border-color: #60a5fa !important;
+  box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3) !important;
+}
+.tag:nth-child(2):hover {
+  border-color: #f59e0b !important;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3) !important;
+}
+.tag:nth-child(3):hover {
+  border-color: #d946ef !important;
+  box-shadow: 0 8px 24px rgba(217, 70, 239, 0.3) !important;
+}
+.tag:nth-child(4):hover {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3) !important;
+}
+.tag:nth-child(5):hover {
+  border-color: #a855f7 !important;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3) !important;
+}
+
+/* Social Stat Card Interactive Micro-Animations */
+.social-stats-grid .item {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease !important;
+  cursor: pointer;
+}
+.social-stats-grid .item:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+}
+.social-stats-grid .item:nth-child(1):hover {
+  border-color: rgba(255, 0, 0, 0.5) !important;
+  box-shadow: 0 14px 34px rgba(255, 0, 0, 0.22) !important;
+}
+.social-stats-grid .item:nth-child(2):hover {
+  border-color: rgba(254, 44, 85, 0.5) !important;
+  box-shadow: 0 14px 34px rgba(37, 244, 238, 0.18), 0 14px 34px rgba(254, 44, 85, 0.18) !important;
+}
+.social-stats-grid .item:nth-child(3):hover {
+  border-color: rgba(225, 48, 108, 0.5) !important;
+  box-shadow: 0 14px 34px rgba(225, 48, 108, 0.22) !important;
+}
+
+/* Certificate Cards Hover Micro-Animations */
+.certificate-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+.certificate-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+  border-color: rgba(168, 85, 247, 0.45) !important;
+  box-shadow: 0 18px 40px rgba(168, 85, 247, 0.16) !important;
+}
+.certificate-card:hover .certificate-image-wrap img {
+  transform: scale(1.025);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Story Section Accent Line */
+/* Story Section Clean - Boundless starfield theme without card border */
+.story-section {
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 20px 0 !important;
+  background: transparent !important;
+}
+.story-section:hover {
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Live Timer Pulse Micro-Animations */
+.uptime-icon, .bday-icon {
+  animation: iconPulse 3s ease-in-out infinite alternate;
+}
+@keyframes iconPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 0px transparent); }
+  100% { transform: scale(1.06); filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.4)); }
+}
+
+/* Scroll Step Navigation Button */
+.section-step{position:fixed;z-index:90;left:50%;right:auto;bottom:max(24px,env(safe-area-inset-bottom));display:grid;place-items:center;width:54px;height:54px;padding:0;border:1px solid #ffffff66;border-radius:50%;background:linear-gradient(145deg,#fff,#d5d5d5);color:#111;box-shadow:0 8px 28px #0005;cursor:pointer;touch-action:manipulation;transform:translateX(-50%) scale(1);transition:opacity 0.3s ease, box-shadow 0.25s ease;animation:stepPopIn 560ms cubic-bezier(.22,1,.36,1) both, stepButtonBounce 2.4s ease-in-out 560ms infinite;}
+@keyframes stepButtonBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0) scale(1); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); }
+  50% { transform: translateX(-50%) translateY(-9px) scale(1.04); box-shadow: 0 16px 36px rgba(255, 255, 255, 0.22); }
+}
+@keyframes stepPopIn {
+  0% { transform: translateX(-50%) translateY(24px) scale(0); opacity: 0; }
+  55% { transform: translateX(-50%) translateY(-5px) scale(1.12); opacity: 1; }
+  78% { transform: translateX(-50%) translateY(2px) scale(.97); }
+  100% { transform: translateX(-50%) translateY(0) scale(1); }
+}
+.section-step.is-idle-hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(16px) scale(0);
+  pointer-events: none !important;
+  animation: stepPopOut 420ms forwards;
+}
+@keyframes stepPopOut {
+  0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; easing: cubic-bezier(.22,1,.36,1); }
+  35% { transform: translateX(-50%) translateY(-6px) scale(1.12); opacity: 1; easing: cubic-bezier(.55,0,.85,.45); }
+  100% { transform: translateX(-50%) translateY(18px) scale(0); opacity: 0; }
+}
 .section-step svg{width:22px;height:22px;pointer-events:none;transition:transform 380ms cubic-bezier(.22,1,.36,1)}
 .section-step.is-top svg{transform:rotate(180deg)}
 .section-step:focus-visible{outline:2px solid #fff;outline-offset:5px}
-.section-step:active{transform:scale(.94)}
+.section-step:active{transform:translateX(-50%) scale(.94)}
 .section-step[hidden],html.modal-active .section-step{display:none!important}
-@media(hover:hover){.section-step:hover{transform:translateY(-3px);box-shadow:0 12px 34px #0008}}
-@media(max-width:700px){.portfolio-hero .avatar-slide.active{transform:none}.portfolio-hero .avatar::after{bottom:14px;left:14px}.section-step{width:48px;height:48px;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom))}}
-@media(prefers-reduced-motion:reduce){.portfolio-hero .avatar-slide{transform:translate(4px,4px)}.portfolio-hero .avatar-slide.active{transform:none}.section-step,.section-step svg{transition:none}.section-step:hover,.section-step:active{transform:none}}
+@media(hover:hover){.section-step:hover{transform:translateX(-50%) translateY(-5px) scale(1.05);box-shadow:0 14px 36px rgba(255,255,255,0.25);}}
+@media(max-width:700px){.portfolio-hero .avatar-slide.active{transform:none}.portfolio-hero .avatar::after{bottom:14px;left:14px}.section-step{width:48px;height:48px;left:50%!important;right:auto!important;bottom:max(16px,env(safe-area-inset-bottom))!important;}}
+
+@media(prefers-reduced-motion:reduce){
+  .portfolio-hero .avatar-slide{transform:translate(4px,4px)}.portfolio-hero .avatar-slide.active{transform:none}.section-step,.section-step svg{transition:none}.section-step:hover,.section-step:active{transform:translateX(-50%)!important}
+  .download-platform .btn:hover,.tag:hover,.social-stats-grid .item:hover,.certificate-card:hover{transform:none!important;}
+}
+
+/* Slot 4: Certificates in Downloads 2x2 Grid & Responsive Viewport Sizing */
+#downloads-section {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: calc(100vh - 85px) !important;
+  box-sizing: border-box !important;
+  padding: 16px 20px 24px !important;
+  scroll-margin-top: 75px !important;
+}
+.download-platforms {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  width: 100% !important;
+  flex: 1 !important;
+}
+.download-platform .btn,
+#gps-cam,
+#autosystem,
+#paintstudio,
+.certificates-slot-card {
+  height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px 18px !important;
+  border-radius: 20px !important;
+}
+.project-preview {
+  height: 160px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.preview-system .project-real-image,
+.preview-paint .project-real-image {
+  height: 88% !important;
+  max-height: 145px !important;
+  width: auto !important;
+  max-width: 88% !important;
+  object-fit: contain !important;
+}
+.gps-phone {
+  height: 88% !important;
+  max-height: 150px !important;
+}
+.preview-gps .project-real-image {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.download-name {
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+}
+.download-file {
+  gap: 3px !important;
+}
+.project-description {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+.download-meta {
+  font-size: 10px !important;
+  margin-top: 2px !important;
+}
+.download-platform .btn > img {
+  width: 24px !important;
+  height: 24px !important;
+}
+.download-arrow {
+  width: 20px !important;
+  height: 20px !important;
+}
+#gps-cam {
+  display: grid !important;
+  grid-template-columns: 24px minmax(0, 1fr) 20px !important;
+  align-content: space-between !important;
+}
+.certificates-slot-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px 18px !important;
+  border: 1px solid #ffffff18 !important;
+  border-radius: 20px !important;
+  background: transparent !important;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.certificates-slot-card:hover {
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 16px 36px rgba(168, 85, 247, 0.1);
+}
+.slot-certs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px !important;
+}
+.slot-certs-header .item-label {
+  font-size: 14px !important;
+}
+.slot-certs-count {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.slot-certs-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  flex: 1 !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+.slot-cert-item {
+  display: flex !important;
+  flex-direction: column !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+  padding: 8px !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  box-shadow: none;
+}
+.slot-cert-item:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  box-shadow: 0 10px 24px rgba(168, 85, 247, 0.18) !important;
+}
+.slot-cert-item .certificate-image-wrap {
+  width: 100%;
+  aspect-ratio: 16/10;
+  height: 95px !important;
+  max-height: 100px !important;
+  border-radius: 9px;
+  overflow: hidden;
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.slot-cert-item .certificate-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+  transition: transform 0.4s ease;
+}
+.slot-cert-item:hover .certificate-image-wrap img {
+  transform: scale(1.05);
+}
+.slot-cert-item .certificate-copy {
+  padding: 6px 2px 2px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 3px !important;
+  flex: 1;
+}
+.slot-cert-item .certificate-title {
+  font-size: 12px !important;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.slot-cert-item .certificate-meta {
+  font-size: 10.5px !important;
+  color: #94a3b8;
+  line-height: 1.25 !important;
+}
+.slot-cert-item .certificate-open {
+  font-size: 10px !important;
+  color: #c084fc;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+/* Compact scaling for shorter viewports to guarantee complete visibility */
+@media (max-height: 720px) {
+  #downloads-section {
+    padding: 10px 16px 14px !important;
+    min-height: calc(100vh - 75px) !important;
+  }
+  .download-platforms {
+    gap: 10px !important;
+  }
+  .download-platform .btn,
+  #gps-cam,
+  #autosystem,
+  #paintstudio,
+  .certificates-slot-card {
+    padding: 10px 14px !important;
+    border-radius: 16px !important;
+  }
+  .project-preview {
+    height: 130px !important;
+  }
+  .preview-system .project-real-image,
+  .preview-paint .project-real-image {
+    max-height: 115px !important;
+  }
+  .gps-phone {
+    max-height: 120px !important;
+  }
+  .download-name {
+    font-size: 16px !important;
+  }
+  .project-description {
+    font-size: 11px !important;
+  }
+  .slot-cert-item .certificate-image-wrap {
+    height: 78px !important;
+    max-height: 82px !important;
+  }
+  .slot-cert-item .certificate-title {
+    font-size: 11px !important;
+  }
+  .slot-cert-item .certificate-meta {
+    font-size: 9.5px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .download-platforms {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .slot-certs-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .project-preview {
+    height: 150px !important;
+  }
+  .preview-system .project-real-image,
+  .preview-paint .project-real-image {
+    max-height: 135px !important;
+  }
+  .gps-phone {
+    max-height: 140px !important;
+  }
+  .slot-cert-item .certificate-image-wrap {
+    height: 110px !important;
+    max-height: 120px !important;
+  }
+}
+
+/* Frameless cards: download buttons, certificates slot, contact panel */
+.download-platform .btn,
+.certificates-slot-card,
+.certificate-card,
+.slot-cert-item,
+.portfolio-contact,
+.download-platform .btn:hover,
+.certificates-slot-card:hover,
+.certificate-card:hover,
+.slot-cert-item:hover {
+  border: none !important;
+  border-color: transparent !important;
+}
+
+/* Touch devices: same look without per-frame backdrop/icon-filter repaints */
+@media (pointer: coarse){
+  .site-header{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(0,0,0,.96);}
+  .uptime-icon,.bday-icon{animation:iconPulseTouch 3s ease-in-out infinite alternate;}
+}
+@keyframes iconPulseTouch{0%{transform:scale(1);}100%{transform:scale(1.06);}}

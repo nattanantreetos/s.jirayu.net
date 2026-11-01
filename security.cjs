@@ -10,7 +10,7 @@ function contains(root, file) {
   return !relative || (relative !== '..' && !relative.startsWith('..' + path.sep) && !path.isAbsolute(relative));
 }
 function loadPolicy(root) {
-  const file = process.env.SEEN_SECURITY_CONFIG || path.resolve(root, '..', '.runtime', 'security.json');
+  const file = process.env.SEEN_SECURITY_CONFIG || path.resolve(root, '..', 'minecraft', '.runtime', 'security.json');
   let config = {};
   if (fs.existsSync(file)) config = JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
   const addresses = key => {

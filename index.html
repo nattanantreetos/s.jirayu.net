@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="google" content="notranslate">
 <link rel="preload" href="FC-Mittraphap.woff2?fresh=114" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="1778995068748.webp?fresh=114" as="image" type="image/webp" fetchpriority="high">
-<script defer src="website-runtime.js?v=shuffle-2500-1"></script>
+<script defer src="intro.js?v=1"></script>
+<script defer src="website-runtime.js?v=touch-261101"></script>
 <script defer src="ui-polish.js?v=site-20261015-3"></script>
 <script>
 document.documentElement.classList.add('page-loading');
@@ -96,7 +98,7 @@ window.__seenRevealFallback = setTimeout(function(){
       "url": "https://s.jirayu.net/",
       "image": "https://s.jirayu.net/1778995068748.webp",
       "description": "ผู้สร้างผลงานเขียนโปรแกรมและแอปออฟไลน์ สนใจการประกอบคอมพิวเตอร์และเทคโนโลยี",
-      "knowsAbout": ["การประกอบคอมพิวเตอร์", "ADB", "Android", "Video Effects", "Editing", "AI Integration", "3D Modeling", "Kotlin", "Lua"],
+      "knowsAbout": ["การประกอบคอมพิวเตอร์", "ADB", "Android", "Video Effects", "Editing", "AI Integration", "3D Modeling", "Kotlin", "Lua", "ภาษา Lua", "เล่นกีตาร์", "ตัดต่อวิดีโอ", "ตัดต่อรูปภาพ", "สร้างโมเดล 3 มิติ"],
       "hasCredential": [
         {"@type":"EducationalOccupationalCredential","name":"Thailand's Soft Power Roblox Game Creation Festival","credentialCategory":"เกียรติบัตรเข้าร่วมการแข่งขัน","dateCreated":"2026-08-30"},
         {"@type":"EducationalOccupationalCredential","name":"การแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch งานวันวิทยาศาสตร์ 2565","credentialCategory":"รางวัลชนะเลิศ ระดับชั้นมัธยมศึกษาตอนต้น","dateCreated":"2022-08-18"}
@@ -127,14 +129,32 @@ window.__seenRevealFallback = setTimeout(function(){
 <link rel="manifest" href="manifest.json?fresh=114">
 <link rel="icon" type="image/webp" href="icon-192.webp?fresh=114">
 <link rel="apple-touch-icon" href="icon-192.webp?fresh=114">
-<link rel="stylesheet" href="site.css?v=shuffle-2500-1">
-<noscript><style>img[data-section-src]{display:none!important;}html.page-loading .bento > .item,html.page-loading .bento > .footer{opacity:1;transform:none;pointer-events:auto;}</style></noscript>
-<link rel="stylesheet" href="interactions.css?v=site-20261015-3">
+<link rel="stylesheet" href="site.css?v=stepbounce-261101">
+<noscript><style>img[data-section-src]{display:none!important;}html.page-loading .bento > .item,html.page-loading .bento > .seo-crawlable-content,html.page-loading .bento > .footer{opacity:1;transform:none;pointer-events:auto;}</style></noscript>
+<link rel="stylesheet" href="interactions.css?v=touch-261101">
 <script defer src="section-navigation.js?v=site-20261015-3"></script>
+<script defer src="motion-blur.js?v=touch-261101"></script>
 </head>
 <body>
 
-<div class="scroll-progress-track" aria-hidden="true"><span class="scroll-progress-bar" id="scroll-progress-bar"></span></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="scroll-motion-blur" color-interpolation-filters="sRGB"><feGaussianBlur id="scroll-motion-blur-amount" stdDeviation="0 0"/></filter></svg>
+
+<div id="intro-overlay" aria-hidden="true">
+  <svg id="intro-svg" viewBox="0 0 1280 720" fill="none" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="intro-white" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -1 0 0 0 1"/>
+      </filter>
+      <mask id="intro-reveal" maskUnits="userSpaceOnUse" x="-40" y="-40" width="1360" height="800">
+        <path id="intro-writer" stroke="#fff" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" d="M313 245 L420 240 L455 220 L467 195 L467 175 L430 160 L340 152 L255 152 L205 158 L170 180 L162 205 L162 240 L172 268 L196 292 L260 320 L360 348 L450 372 L490 392 L430 392 L340 390 L280 393 L240 410 L228 432 L228 462 L240 488 L270 505 L330 512 L420 510 L465 502 L492 482 L503 458 L503 432 L498 418 L486 411 L476 405 L515 392 L540 375 L575 365 L610 358 L660 358 L680 360 L690 372 L690 395 L683 412 L660 432 L630 448 L590 455 L560 455 L530 448 L510 435 L505 425 L515 480 L529 500 L540 510 L556 520 L590 530 L620 530 L648 520 L668 505 L690 380 L730 365 L780 362 L830 362 L848 368 L852 382 L845 398 L800 432 L750 468 L700 500 L680 515 L673 420 L667 440 L669 460 L671 480 L675 500 L684 520 L700 535 L720 540 L760 537 L786 520 L815 500 L863 460 L893 445 L910 440 L925 400 L940 360 L957 320 L981 280 L1011 240 L1044 200 L1067 175 L1011 240 L957 320 L925 400 L904 460 L891 500 L920 430 L940 405 L975 402 L1005 415 L1028 455 L1035 490 L1030 525 L1010 555 L975 578 L935 582 L905 570 L893 540 L893 505 L905 480"/>
+      </mask>
+    </defs>
+    <g mask="url(#intro-reveal)">
+      <image href="signature.png?v=1" width="1280" height="720" preserveAspectRatio="none" filter="url(#intro-white)"/>
+    </g>
+    <circle id="intro-pen" r="7" fill="#fff" opacity="0"/>
+  </svg>
+</div>
 
 <!-- LEFT NAVIGATION BAR (HOME, STORY, DOWNLOADS) -->
 <header class="site-header">
@@ -142,27 +162,24 @@ window.__seenRevealFallback = setTimeout(function(){
 <nav class="nav-pill-wrap" id="nav-pill-wrap" aria-label="Main Navigation">
   <button type="button" class="nav-btn active" id="btn-nav-home" onclick="scrollToSection('hero-section')" title="หน้าหลัก">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-    <span id="t-nav-home" data-i18n="navHome">หน้าหลัก</span>
+    <span id="t-nav-home">หน้าหลัก</span>
   </button>
   <button type="button" class="nav-btn" id="btn-nav-story" onclick="scrollToSection('story-section')" title="เรื่องราว">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-    <span id="t-nav-story" data-i18n="navStory">เรื่องราว</span>
+    <span id="t-nav-story">เรื่องราว</span>
   </button>
-  <button type="button" class="nav-btn nav-btn-cert" id="btn-nav-certificates" onclick="scrollToSection('certificates-section')" title="เกียรติบัตร">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v3a4 4 0 0 1-8 0V4z"></path><path d="M8 6H5v1a3 3 0 0 0 3 3m8-4h3v1a3 3 0 0 1-3 3M12 11v5m-4 4h8m-6-4h4"></path></svg>
-    <span class="nav-cert-label" id="t-nav-certificates" data-i18n="navCertificates">เกียรติบัตร</span>
-  </button>
-  <button type="button" class="nav-btn" id="btn-nav-dl" onclick="scrollToSection('downloads-section')" title="ดาวน์โหลด">
+  <button type="button" class="nav-btn" id="btn-nav-dl" onclick="scrollToSection('downloads-section')" title="ดาวน์โหลด & เกียรติบัตร">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-    <span id="t-nav-dl" data-i18n="navDownload">ดาวน์โหลด</span>
+    <span id="t-nav-dl">ดาวน์โหลด & เกียรติบัตร</span>
+  </button>
+    <button type="button" class="nav-btn" id="btn-nav-contact" onclick="scrollToSection('contact-section')" title="ติดต่อ">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    <span id="t-nav-contact">ติดต่อ</span>
   </button>
   <span class="nav-active-line" aria-hidden="true"></span>
 </nav>
 
-<!-- One button displays the current language and toggles to the other. -->
-<div class="lang-switch-wrap" id="lang-switch" role="group" aria-label="Language Selector">
-  <button type="button" class="lang-btn active" id="btn-lang-toggle" onclick="toggleLanguage(this)" aria-label="Language: English. Switch to Thai" title="Switch to Thai">ENG</button>
-</div>
+
 </div>
 </header>
 <canvas id="space-stars-canvas" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;pointer-events:none;z-index:1;" aria-hidden="true"></canvas>
@@ -185,18 +202,22 @@ window.__seenRevealFallback = setTimeout(function(){
 <!-- 1. PROFILE HERO -->
 <div class="item col-4 profile-card portfolio-hero" id="hero-section">
 <div class="profile-wrap">
-<div class="avatar" role="button" tabindex="0" aria-label="ดูภาพโปรไฟล์ขนาดเต็ม" onclick="openAvatar()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAvatar();}">
-<img class="avatar-slide active" src="1778995068748.webp?fresh=114" alt="ณัฐนันท์ ตรีทศ (SEEN / seen1236) — Natthanan Treetos" width="360" height="480" fetchpriority="high" decoding="async">
-<img class="avatar-slide" src="1781878817675.webp?fresh=114" alt="ภาพโปรไฟล์อีกภาพของ ณัฐนันท์ ตรีทศ (ซีน)" width="360" height="480" fetchpriority="low" decoding="async">
+<div class="avatar avatar-dual" aria-label="ภาพโปรไฟล์ของ ณัฐนันท์ ตรีทศ (SEEN)">
+  <div class="avatar-circle avatar-main" role="button" tabindex="0" aria-label="ดูภาพโปรไฟล์หลักขนาดเต็ม" onclick="openAvatar(0)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAvatar(0);}">
+    <img class="avatar-slide active" src="1778995068748.webp?fresh=114" alt="ณัฐนันท์ ตรีทศ (SEEN / seen1236) — Natthanan Treetos" width="360" height="360" fetchpriority="high" decoding="async">
+  </div>
+  <div class="avatar-circle avatar-sub" role="button" tabindex="0" aria-label="ดูภาพโปรไฟล์รองขนาดเต็ม" onclick="openAvatar(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAvatar(1);}" title="ภาพโปรไฟล์รอง">
+    <img class="avatar-slide" src="1781878817675.webp?fresh=114" alt="ภาพโปรไฟล์อีกภาพของ ณัฐนันท์ ตรีทศ (ซีน)" width="180" height="180" fetchpriority="low" decoding="async">
+  </div>
 </div>
 <div class="profile-info">
-<p class="portfolio-eyebrow"><span class="portfolio-status-dot" aria-hidden="true"></span> SEEN / PERSONAL PORTFOLIO</p>
-<h1>SEEN <span class="profile-name" lang="th">ซีน · ณัฐนันท์ ตรีทศ</span><span class="profile-name" lang="en">Natthanan Treetos · seen1236</span></h1>
-<div class="sub" lang="en">Natthanan <span>Treetos</span></div>
+<p class="portfolio-eyebrow"><span class="portfolio-status-dot" aria-hidden="true"></span> <span>SEEN / แฟ้มสะสมผลงาน</span></p>
+<h1>SEEN <span class="profile-name">ซีน · ณัฐนันท์ ตรีทศ</span></h1>
+<div class="sub">Natthanan <span>Treetos</span></div>
 <p class="profile-handle">@seen1236</p>
-<p class="portfolio-intro" data-i18n="portfolioIntro">สร้างแอป ทดลองเทคโนโลยี และเรียนรู้ผ่านการลงมือทำ — รวมผลงาน ทักษะ และเรื่องราวของผมไว้ที่นี่</p>
-<div class="portfolio-actions"><a href="#downloads-section" data-i18n="portfolioWorkAction">ดูผลงานของผม ↗</a><a href="#contact-section" data-i18n="portfolioContactAction">ติดต่อผม</a></div>
-<div class="portfolio-facts"><span><strong>03</strong><small data-i18n="portfolioProjectsLabel">โปรเจกต์</small></span><span><strong>02</strong><small data-i18n="portfolioAwardsLabel">เกียรติบัตร</small></span><span><strong>∞</strong><small data-i18n="portfolioLearningLabel">เรียนรู้เสมอ</small></span></div>
+<p class="portfolio-intro">สร้างแอป ทดลองเทคโนโลยี และเรียนรู้ผ่านการลงมือทำ — รวมผลงาน ทักษะ และเรื่องราวของผมไว้ที่นี่</p>
+<div class="portfolio-actions"><a href="#downloads-section">ดูผลงานของผม ↗</a><a href="#contact-section">ติดต่อผม</a></div>
+<div class="portfolio-facts"><span><strong id="my-age" class="stat-age">16y 6m 5d</strong><small id="t-age-lbl">อายุ</small></span><span><strong>03</strong><small>โปรเจกต์</small></span><span><strong>02</strong><small>เกียรติบัตร</small></span><span><strong>∞</strong><small>เรียนรู้เสมอ</small></span></div>
 </div>
 <div class="social-strip">
 <div class="social-row">
@@ -208,52 +229,6 @@ window.__seenRevealFallback = setTimeout(function(){
 <a class="social-link" href="https://github.com/SEEN1236" target="_blank" rel="me noopener noreferrer" title="GitHub SEEN1236"><img src="github.webp?fresh=114" alt="GitHub SEEN1236" width="24" height="24" decoding="async"></a>
 <a class="social-link" href="https://www.facebook.com/seen1236" target="_blank" rel="me noopener noreferrer" title="Facebook seen1236"><img src="facebook.webp?fresh=114" alt="Facebook seen1236" width="24" height="24" decoding="async"></a>
 </div>
-</div>
-</div>
-</div>
-
-<!-- 2. INFO & STATUS -->
-<div class="item col-2" id="info-section" style="justify-content:center;">
-<h2 class="item-label">
-<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<circle cx="12" cy="12" r="10" stroke="url(#info-hdr-grad)"></circle>
-<line x1="12" y1="16" x2="12" y2="12" stroke="#fff" stroke-width="2.2"></line>
-<line x1="12" y1="8" x2="12.01" y2="8" stroke="#fff" stroke-width="2.8"></line>
-</svg>
-<span id="t-info-hdr">INFO & STATUS</span>
-</h2>
-<div class="bio-list">
-<div class="bio-item">
-<span class="bio-key">
-<svg viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-<path d="M3 21h18v-7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7z"/>
-<path d="M3 16c2 1 3.5-1 5.5 0s3.5-1 5.5 0 3.5-1 5.5 0 3.5-1 4.5 0"/>
-<line x1="7" y1="12" x2="7" y2="7"/>
-<line x1="12" y1="12" x2="12" y2="6"/>
-<line x1="17" y1="12" x2="17" y2="7"/>
-<path d="M7 4.5c.5 0 .8.3.8.8 0 .8-.8 1.4-.8 1.4s-.8-.6-.8-1.4c0-.5.3-.8.8-.8z" fill="#f43f5e"/>
-<path d="M12 3.5c.5 0 .8.3.8.8 0 .8-.8 1.4-.8 1.4s-.8-.6-.8-1.4c0-.5.3-.8.8-.8z" fill="#f43f5e"/>
-<path d="M17 4.5c.5 0 .8.3.8.8 0 .8-.8 1.4-.8 1.4s-.8-.6-.8-1.4c0-.5.3-.8.8-.8z" fill="#f43f5e"/>
-</svg>
-<span id="t-age-lbl">Age</span>
-</span>
-<span class="val" id="my-age">16y</span>
-</div>
-<div class="bio-item">
-<span class="bio-key">
-<svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
-<span id="t-food-lbl">Food</span>
-</span>
-<span class="val status-val" id="t-food-val">Fried Egg</span>
-</div>
-<div class="bio-item">
-<span class="bio-key">
-<svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4"></path><path d="M18 10h4L12 2 2 10h4v12h12V10z"></path><circle cx="12" cy="7" r="1"></circle></svg>
-<span id="t-present-lbl">Present</span>
-</span>
-<span class="val status-val" id="t-present-val">
-พระนครศรีอยุธยา
-</span>
 </div>
 </div>
 </div>
@@ -270,13 +245,13 @@ window.__seenRevealFallback = setTimeout(function(){
 <span id="t-uptime-hdr">UPTIME</span>
 </div>
 <div class="timer-grid">
-<div class="timer-unit"><div class="timer-num" id="u-days">0000</div><div class="timer-label" data-i18n="days">DAYS</div></div>
+<div class="timer-unit"><div class="timer-num" id="u-days">0000</div><div class="timer-label">วัน</div></div>
 <div class="timer-sep">:</div>
-<div class="timer-unit"><div class="timer-num" id="u-hours">00</div><div class="timer-label" data-i18n="hours">HOURS</div></div>
+<div class="timer-unit"><div class="timer-num" id="u-hours">00</div><div class="timer-label">ชม.</div></div>
 <div class="timer-sep">:</div>
-<div class="timer-unit"><div class="timer-num" id="u-mins">00</div><div class="timer-label" data-i18n="mins">MINS</div></div>
+<div class="timer-unit"><div class="timer-num" id="u-mins">00</div><div class="timer-label">นาที</div></div>
 <div class="timer-sep">:</div>
-<div class="timer-unit"><div class="timer-num" id="u-secs">00</div><div class="timer-label" data-i18n="secs">SECS</div></div>
+<div class="timer-unit"><div class="timer-num" id="u-secs">00</div><div class="timer-label">วินาที</div></div>
 </div>
 </div>
 
@@ -295,13 +270,13 @@ window.__seenRevealFallback = setTimeout(function(){
 <span id="t-bday-hdr">NEXT BIRTHDAY</span>
 </div>
 <div class="timer-grid">
-<div class="timer-unit"><div class="timer-num" id="b-days">000</div><div class="timer-label">DAYS</div></div>
+<div class="timer-unit"><div class="timer-num" id="b-days">000</div><div class="timer-label">วัน</div></div>
 <div class="timer-sep">:</div>
-<div class="timer-unit"><div class="timer-num" id="b-hours">00</div><div class="timer-label">HOURS</div></div>
+<div class="timer-unit"><div class="timer-num" id="b-hours">00</div><div class="timer-label">ชม.</div></div>
 <div class="timer-sep">:</div>
-<div class="timer-unit"><div class="timer-num" id="b-mins">00</div><div class="timer-label">MINS</div></div>
+<div class="timer-unit"><div class="timer-num" id="b-mins">00</div><div class="timer-label">นาที</div></div>
 <div class="timer-sep">:</div>
-<div class="timer-unit"><div class="timer-num" id="b-secs">00</div><div class="timer-label">SECS</div></div>
+<div class="timer-unit"><div class="timer-num" id="b-secs">00</div><div class="timer-label">วินาที</div></div>
 </div>
 </div>
 </div>
@@ -317,8 +292,18 @@ window.__seenRevealFallback = setTimeout(function(){
 </div>
 <div class="tag-list">
 <div class="tag">
-<svg viewBox="0 0 24 24" fill="#3DDC84"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5896 8.411 13.849 8.125 12 8.125c-1.849 0-3.5896.286-5.1368.8247L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
-ADB & Android
+<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#000080" /><circle cx="17" cy="7" r="3.5" fill="#60a5fa" /><circle cx="8" cy="16" r="2.5" fill="#ffffff" /></svg>
+<span>ภาษา Lua</span>
+</div>
+<div class="tag">
+<svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M11.5 12.5a3.5 3.5 0 0 0-5 5 3.5 3.5 0 0 0 5-5z"/>
+<circle cx="9" cy="15" r="1.2" fill="#f59e0b" stroke="none"/>
+<path d="M11.5 12.5 18 6"/>
+<path d="m17 5 2 2"/>
+<circle cx="19.5" cy="4.5" r="1" fill="#f59e0b" stroke="none"/>
+</svg>
+<span>เล่นกีตาร์</span>
 </div>
 <div class="tag">
 <svg viewBox="0 0 24 24" fill="none" style="filter:drop-shadow(0 0 4px rgba(217,70,239,0.5));">
@@ -346,27 +331,19 @@ ADB & Android
 <circle cx="4.5" cy="6.3" r="0.7" fill="#ffffff"/>
 </g>
 </svg>
-Video Effects
+<span>ตัดต่อวิดีโอ</span>
 </div>
 <div class="tag">
-<svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
-Editing
-</div>
-<div class="tag">
-<svg viewBox="0 0 24 24" fill="none" stroke="url(#ai-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-AI Integration
+<svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+<circle cx="8.5" cy="8.5" r="1.5"/>
+<polyline points="21 15 16 10 5 21"/>
+</svg>
+<span>ตัดต่อรูปภาพ</span>
 </div>
 <div class="tag">
 <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-3D Modeler
-</div>
-<div class="tag">
-<svg viewBox="0 0 24 24" fill="none"><path d="M24 24H0V0h24L12 12Z" fill="url(#kotlin-grad)"/></svg>
-Kotlin
-</div>
-<div class="tag">
-<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#000080" /><circle cx="17" cy="7" r="3.5" fill="#60a5fa" /><circle cx="8" cy="16" r="2.5" fill="#ffffff" /></svg>
-Lua
+<span>สร้างโมเดล 3 มิติ</span>
 </div>
 </div>
 </div>
@@ -380,8 +357,8 @@ Lua
 <svg width="22" height="17" viewBox="0 0 24 18" style="filter:drop-shadow(0 0 3px #FF0000) drop-shadow(0 0 8px rgba(255,0,0,0.6));"><rect width="24" height="18" rx="4.5" fill="#FF0000"/><polygon points="9.5,4.5 16.5,9 9.5,13.5" fill="#FFFFFF"/></svg>
 YOUTUBE
 </div>
-<div class="stat-big">1.31K<span class="unit">SUBS</span></div>
-<div class="stat-sub">Joined May 2021</div>
+<div class="stat-big">1.29K<span class="unit">ซับ</span></div>
+<div class="stat-sub">เข้าร่วม พ.ค. 2021</div>
 </div>
 </div>
 
@@ -395,8 +372,8 @@ YOUTUBE
 </svg>
 TIKTOK
 </div>
-<div class="stat-big">3<span class="unit" data-i18n="followers">FOLLOWERS</span></div>
-<div class="stat-sub" id="t-tt-sub">New Account</div>
+<div class="stat-big">12<span class="unit">ผู้ติดตาม</span></div>
+<div class="stat-sub" id="t-tt-sub">บัญชีใหม่</div>
 </div>
 </div>
 
@@ -411,87 +388,117 @@ TIKTOK
 </svg>
 INSTAGRAM
 </div>
-<div class="stat-big">102<span class="unit">FOLLOWERS</span></div>
-<div class="stat-sub" id="t-ig-sub">Joined Jul 2022</div>
+<div class="stat-big">113<span class="unit">ผู้ติดตาม</span></div>
+<div class="stat-sub" id="t-ig-sub">เข้าร่วม ก.ค. 2022</div>
 </div>
 </div>
 </div>
 </div>
 
-<!-- 6. NOTE & STORY -->
-<div class="item col-2 note-card" id="story-section">
-<h2 class="item-label" style="justify-content:flex-start;margin-bottom:14px;">
+<!-- 2. NOTE & STORY -->
+<section class="item col-4 note-card story-section" id="story-section" aria-labelledby="t-note-hdr">
+<div class="story-wrapper">
+<h2 class="item-label" id="t-note-hdr" style="justify-content:flex-start;margin-bottom:14px;">
 <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="url(#note-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-<span id="t-note-hdr">เกี่ยวกับ ณัฐนันท์ ตรีทศ (SEEN)</span>
+<span>เกี่ยวกับ ณัฐนันท์ ตรีทศ (SEEN)</span>
 </h2>
-<div>
-<p id="t-note-p0" style="margin:0 0 10px 0;font-size:22.5px;font-weight:600;color:#ffffff;">สวัสดี ผมชื่อ ณัฐนันท์ ตรีทศ ชื่อเล่นซีน (<span style="color:#60a5fa;">SEEN</span>) ใช้ชื่อ seen1236 บนโลกออนไลน์</p>
-<p id="t-note-p1" style="margin:0 0 12px 0;text-indent:1.5em;color:#cbd5e1;">คุณเข้ามาในเว็บนี้เพื่อโหลดอะไรหรือเปล่า? ข้างล่างนี้มีปุ่มดาวน์โหลดอยู่ — <span style="color:#4ade80;font-weight:500;text-shadow:0 0 6px rgba(74,222,128,0.35);">ไม่มีไวรัสแน่นอน</span> เป็นแอปออฟไลน์ 100% ผมเขียนไว้ใช้เอง แต่ถ้าเข้ามาเห็นก็ลองโหลดไปใช้ได้เลย</p>
-<p id="t-note-p2" style="margin:0 0 12px 0;text-indent:1.5em;color:#cbd5e1;">ในอนาคตผมอยากเป็น <span style="color:#ffffff;font-weight:600;">ครู</span> ตอนโตขึ้นไม่รู้ว่าจะได้เป็นไหม แต่ขอให้ได้เป็นเถอะ</p>
-<p id="t-note-p3" style="margin:0 0 14px 0;text-indent:1.5em;color:#94a3b8;">คอมพิวเตอร์เครื่องนี้ซื้อตอน <span style="color:#60a5fa;font-weight:600;text-shadow:0 0 8px rgba(96,165,250,0.4);">ม.3</span> มาประกอบเอง</p>
-<div id="t-note-date" style="margin-top:10px;font-size:15.5px;color:#64748b;">เขียนเมื่อ: วันอาทิตย์ที่ 5 กรกฎาคม 2026</div>
+<div class="story-speech">
+<p id="t-note-p0" class="story-headline" style="margin:0 0 12px 0;font-size:22.5px;font-weight:600;color:#ffffff;line-height:1.55;">สวัสดี ผมชื่อ ณัฐนันท์ ตรีทศ ชื่อเล่นซีน (<span style="color:#60a5fa;font-weight:600;">SEEN</span>) ใช้ชื่อ seen1236 บนโลกออนไลน์</p>
+<p id="t-note-p1" class="story-body" style="margin:0;font-size:16.5px;color:#cbd5e1;line-height:1.85;">ถ้าใครหลุดมาดูเว็บนี้ ผมอาจจะโชว์ลิงก์นี้ให้ทุกคนดู หรือไม่ก็ผมอาจจะดังแล้วทุกคนกดเข้ามาดู เว็บนี้จะมีบอกว่าผลงานผมคืออะไร มีเกียรติบัตรอะไรบ้าง แล้วเกี่ยวกับตัวผมคือยังไง ติดต่อผมได้ที่ไหนบ้าง ก็ติดตามกันได้</p>
 </div>
 </div>
+</section>
 
-<section class="item col-4 note-card" id="profile-details-section" aria-labelledby="profile-details-heading">
-<h2 class="item-label" id="profile-details-heading" data-i18n="profileDetailsHeading">ความสนใจ ผลงาน และช่องทางของ SEEN</h2>
+<!-- SEO SEARCH CRAWLER ACCESSIBLE CONTENT (Hidden visually for Google indexing) -->
+<section class="seo-crawlable-content" id="profile-details-section" aria-label="ข้อมูลสำหรับเครื่องมือค้นหา SEO">
+<div class="seo-meta-hidden" style="display:none;" aria-hidden="true"><span id="t-info-hdr">INFO & STATUS</span><span id="t-age-lbl">Age</span>: <span id="my-age">16y</span> | <span id="t-food-lbl">Food</span>: <span id="t-food-val">Fried Egg</span> | <span id="t-present-lbl">Present</span>: <span id="t-present-val">พระนครศรีอยุธยา</span></div>
+<h2 class="item-label" id="profile-details-heading">ความสนใจ ผลงาน และช่องทางของ SEEN</h2>
 <div class="profile-summary">
-<h3 id="seen-identity" data-i18n="profileIdentityHeading">ณัฐนันท์ ตรีทศ หรือ SEEN คือใคร?</h3>
+<h3 id="seen-identity">ณัฐนันท์ ตรีทศ หรือ SEEN คือใคร?</h3>
 <p lang="th">ณัฐนันท์ ตรีทศ ชื่อเล่นซีน ใช้ชื่อ SEEN และ seen1236 บนโลกออนไลน์ เว็บไซต์นี้รวบรวมประวัติ ความสนใจด้านการเขียนโปรแกรม การประกอบคอมพิวเตอร์ ผลงานแอป เกียรติบัตร และช่องทางติดตามของซีนไว้ในที่เดียว</p>
 <p lang="en">Natthanan Treetos (ณัฐนันท์ ตรีทศ), also known as SEEN, ซีน or seen1236, shares his programming projects, computer-building interests, Windows and Android apps, certificates and social accounts on this personal website.</p>
-<h3 data-i18n="profileSkillsHeading">ความสนใจและทักษะ</h3>
-<p data-i18n="profileSkillsText">ณัฐนันท์ ตรีทศ (Natthanan Treetos) สนใจการประกอบคอมพิวเตอร์ และมีทักษะด้าน ADB และ Android, Video Effects, การตัดต่อ, AI Integration, การสร้างโมเดล 3D, Kotlin และ Lua โดยประกอบคอมพิวเตอร์ใช้เองตั้งแต่ ม.3 และมีความฝันอยากเป็นครู</p>
-<h3 data-i18n="profileWorksHeading">ผลงานที่เปิดให้ดาวน์โหลด</h3>
-<p data-i18n="profileWorksText">ผลงานในเว็บไซต์นี้ประกอบด้วย GPS Cam สำหรับ Android และ AutoSystem, PaintStudio สำหรับ Windows เลือกดาวน์โหลดได้จากส่วนผลงานด้านล่าง</p>
-<p><a href="#downloads-section" data-i18n="profileWorksLink">ดูผลงานและไฟล์ดาวน์โหลด</a></p>
-<p class="profile-project-links"><a href="#gps-cam">GPS Cam — Android APK</a> · <a href="#autosystem">AutoSystem — Windows</a> · <a href="#paintstudio">PaintStudio — Windows</a></p>
-<h3 data-i18n="profileAwardsHeading">ผลงานการแข่งขันและเกียรติบัตรของซีน</h3>
-<p data-i18n="profileAwardsText">เกียรติบัตรของ ณัฐนันท์ ตรีทศ ได้แก่การเข้าร่วม Thailand’s Soft Power Roblox Game Creation Festival และรางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch ระดับมัธยมศึกษาตอนต้น ดูภาพเกียรติบัตรและรายละเอียดได้ในส่วนเกียรติบัตรและรางวัล</p>
-<p><a href="#certificates-section" data-i18n="profileAwardsLink">ดูเกียรติบัตรของ ณัฐนันท์ ตรีทศ (SEEN)</a></p>
-<h3 data-i18n="profileAccountsHeading">บัญชีโซเชียลและซอร์สโค้ด</h3>
-<p data-i18n="profileAccountsText">ซีนใช้ชื่อ SEEN หรือ seen1236 บนโลกออนไลน์ ติดตามผลงานและเรื่องราวผ่านบัญชีต่อไปนี้</p>
+<p>คุณเข้ามาในเว็บนี้เพื่อโหลดอะไรหรือเปล่า? ข้างล่างนี้มีปุ่มดาวน์โหลดอยู่ — <span style="color:#4ade80;">ไม่มีไวรัสแน่นอน</span> เป็นแอปออฟไลน์ 100% ผมเขียนไว้ใช้เอง แต่ถ้าเข้ามาเห็นก็ลองโหลดไปใช้ได้เลย</p>
+
+<h3>ความสนใจและทักษะ</h3>
+<p>ณัฐนันท์ ตรีทศ (Natthanan Treetos) สนใจการประกอบคอมพิวเตอร์ และมีทักษะด้าน ADB และ Android, Video Effects, การตัดต่อ, AI Integration, การสร้างโมเดล 3D, Kotlin และ Lua โดยประกอบคอมพิวเตอร์ใช้เองตั้งแต่ ม.3 และมีความฝันอยากเป็นครู</p>
+<p>ทักษะและความเชี่ยวชาญ (Skills & Expertise): ADB & Android, Video Effects, Editing, AI Integration, 3D Modeler, Kotlin, Lua, ภาษา Lua, เล่นกีตาร์, ตัดต่อวิดีโอ, ตัดต่อรูปภาพ, สร้างโมเดล 3 มิติ</p>
+
+<h3>ข้อมูลส่วนตัวและสถิติ (INFO & STATUS)</h3>
+<p>Age: 16y | Food: Fried Egg | Present: พระนครศรีอยุธยา</p>
+<p>สถิติโซเชียลมีเดีย: YouTube: 1.31K SUBS (Joined May 2021) | TikTok: 3 FOLLOWERS (New Account) | Instagram: 102 FOLLOWERS (Joined Jul 2022)</p>
+<p>Uptime & Counter: UPTIME (DAYS, HOURS, MINS, SECS) | NEXT BIRTHDAY (DAYS, HOURS, MINS, SECS)</p>
+
+<h3>ผลงานที่เปิดให้ดาวน์โหลด</h3>
+<p>ผลงานในเว็บไซต์นี้ประกอบด้วย GPS Cam สำหรับ Android และ AutoSystem, PaintStudio สำหรับ Windows เลือกดาวน์โหลดได้จากส่วนผลงานด้านล่าง</p>
+<p><a href="#downloads-section">ดูผลงานและไฟล์ดาวน์โหลด (PROJECTS & DOWNLOADS — Apps by SEEN)</a></p>
+<p class="profile-project-links"><a href="#gps-cam">GPS Cam — Android APK (โปรเจกต์แอปสำหรับโทรศัพท์ Android · APK · 44.46 KB)</a> · <a href="#autosystem">AutoSystem — Windows (เครื่องมือคลิกอัตโนมัติ บันทึกและเล่นมาโครบน Windows · EXE · 68.43 MB)</a> · <a href="#paintstudio">PaintStudio — Windows (โปรเจกต์แอปวาดภาพและงานสร้างสรรค์ · EXE · 0.90 MB)</a></p>
+
+<h3>ผลงานการแข่งขันและเกียรติบัตรของซีน</h3>
+<p>เกียรติบัตรของ ณัฐนันท์ ตรีทศ ได้แก่การเข้าร่วม Thailand’s Soft Power Roblox Game Creation Festival (เกียรติบัตรเข้าร่วมการแข่งขัน ระดับมัธยมศึกษา/ปวช. · 30 สิงหาคม 2569) และรางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch ระดับมัธยมศึกษาตอนต้น (18 สิงหาคม 2565) ดูภาพเกียรติบัตรและรายละเอียดได้ในส่วนเกียรติบัตรและรางวัล (Certificates & Awards)</p>
+<p><a href="#certificates-section">ดูเกียรติบัตรของ ณัฐนันท์ ตรีทศ (SEEN)</a></p>
+
+<h3>บัญชีโซเชียลและซอร์สโค้ด</h3>
+<p>ซีนใช้ชื่อ SEEN หรือ seen1236 บนโลกออนไลน์ ติดตามผลงานและเรื่องราวผ่านบัญชีต่อไปนี้</p>
 <p><a href="https://github.com/SEEN1236" rel="me noopener noreferrer" target="_blank">GitHub: SEEN1236</a> · <a href="https://www.youtube.com/@seen1236_yt" rel="me noopener noreferrer" target="_blank">YouTube: @seen1236_yt</a> · <a href="https://www.tiktok.com/@seen1236_tt" rel="me noopener noreferrer" target="_blank">TikTok: @seen1236_tt</a> · <a href="https://www.instagram.com/seen1236_ig/" rel="me noopener noreferrer" target="_blank">Instagram: @seen1236_ig</a> · <a href="https://www.facebook.com/seen1236" rel="me noopener noreferrer" target="_blank">Facebook: seen1236</a></p>
+<p id="t-note-p2">ในอนาคตผมอยากเป็น ครู ตอนโตขึ้นไม่รู้ว่าจะได้เป็นไหม แต่ขอให้ได้เป็นเถอะ</p>
+<p id="t-note-p3">คอมพิวเตอร์เครื่องนี้ซื้อตอน ม.3 มาประกอบเอง</p>
+<div id="t-note-date">เขียนเมื่อ: วันอาทิตย์ที่ 5 กรกฎาคม 2026</div>
+
+<h3>ข้อมูลสเปกคอมพิวเตอร์ (PC SPECIFICATIONS)</h3>
+<p>PC SPECIFICATIONS (คอมประกอบเอง ม.3): ซื้อเมื่อ 26/09/2024 09:29 · BASE SPEC / SYSTEM (CPU Intel i5-3470 x1) · GRAPHICS CARD (GTX 750 Ti) · RAM UPGRADE (16GB)</p>
+</div>
+<!-- English mirror of the legacy bilingual page so crawlers read the same text as before -->
+<div lang="en">
+<h3>SEEN / PERSONAL PORTFOLIO — Natthanan Treetos · seen1236</h3>
+<p>Building apps, exploring technology and learning by doing — a collection of my projects, skills and personal story. Explore my projects ↗ · Contact me</p>
+<p>Home · Story · Certificates · Downloads · ENG/TH</p>
+<p>PROJECTS · CERTIFICATES · ALWAYS LEARNING</p>
+<h3>About Natthanan Treetos (SEEN)</h3>
+<p>Hello, I'm Natthanan Treetos (<span lang="th">ณัฐนันท์ ตรีทศ</span>), nicknamed <span>SEEN</span> and known online as seen1236.</p>
+<p>Did you visit this site to download something? The download buttons are right below — <span>100% virus-free</span>, offline apps I wrote for my own use. Feel free to download and try them!</p>
+<p>In the future, I want to become a <span>Teacher</span>. Growing up, I don't know if I will, but I really hope I do.</p>
+<p>I bought and assembled this computer myself back in <span>Grade 9 (M.3)</span>.</p>
+<p>Written on: Sunday, July 5, 2026</p>
+<h3>INFO &amp; STATUS — Age: 16y | Favorite Food: Fried Egg | Location: Phra Nakhon Si Ayutthaya</h3>
+<h3>SKILLS &amp; EXPERTISE — ADB &amp; Android, Video Effects, Editing, AI Integration, 3D Modeler, Kotlin, Lua</h3>
+<h3>SEEN: interests, projects and profiles</h3>
+<p>Who is Natthanan Treetos (SEEN)?</p>
+<h3>Interests and skills</h3>
+<p>Natthanan Treetos (ณัฐนันท์ ตรีทศ) is interested in building computers, with skills in ADB and Android, video effects, editing, AI integration, 3D modeling, Kotlin and Lua. He assembled his own computer in Grade 9 (M.3) and hopes to become a teacher.</p>
+<h3>Projects available to download</h3>
+<p>My Windows and Android app projects. Explore each project and download an app to try it. Apps by SEEN · Windows &amp; Android</p>
+<p>Projects on this website include GPS Cam for Android and AutoSystem and PaintStudio for Windows. Download links are available in the projects section below. View projects and downloads</p>
+<p>AutoSystem — Auto clicking, macro recording and playback for Windows · PaintStudio — A drawing and creative app project · GPS Cam — A mobile app project for Android</p>
+<h3>SEEN’s competitions and certificates — CERTIFICATES &amp; AWARDS</h3>
+<p>Natthanan Treetos received a participation certificate for Thailand’s Soft Power Roblox Game Creation Festival and a first-place award in a lower-secondary Scratch project competition. Certificate images and details are available in the Certificates and Awards section.</p>
+<p>Thailand’s Soft Power Roblox Game Creation Festival — Competition participation certificate, secondary/vocational level · August 30, 2026 · Tap to view full-size image</p>
+<p>Scratch Creative Computer Game Competition — First-place award, lower secondary level · August 18, 2022 · Tap to view full-size image</p>
+<p>View Natthanan Treetos (SEEN)’s certificates</p>
+<h3>Social profiles and source code</h3>
+<p>Known online as SEEN or seen1236, he shares projects and updates through the following accounts.</p>
+<h3>PC SPECIFICATIONS (Custom Built - Grade 9)</h3>
+<p>Purchased 26/09/2024 09:29 — BASE SPEC / SYSTEM: CPU INTEL I5-3470 x1, MB DELL 0YXT71 x1, RAM DDR3 4GB x1, HDD 500GB x1, CASE OPTIPLEX 7010 x1 · SUBTOTAL ฿1,232</p>
+<p>Purchased 20/11/24 11:42 — GRAPHICS CARD / GPU: R7 250X 1GB x1 · SUBTOTAL ฿580</p>
+<p>Purchased 29/09/2024 01:33 — RAM UPGRADE / MEMORY: DDR3 8GB 1600MHz x2 · SUBTOTAL ฿392</p>
+<h3>Contact &amp; follow my work</h3>
+<p>Get in touch by email to talk about my projects or share your feedback.</p>
 </div>
 </section>
 
-<!-- 7. CERTIFICATES & AWARDS -->
-<section class="item col-4 certificates-section" id="certificates-section" aria-labelledby="certificates-heading">
-<h2 class="item-label" id="certificates-heading">
-<svg viewBox="0 0 24 24" fill="none" stroke="url(#skills-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v3a4 4 0 0 1-8 0V4z"></path><path d="M8 6H5v1a3 3 0 0 0 3 3m8-4h3v1a3 3 0 0 1-3 3M12 11v5m-4 4h8m-6-4h4"></path></svg>
-<span data-i18n="certificatesHdr">เกียรติบัตรและรางวัล</span>
-</h2>
-<div class="certificate-grid">
-<button type="button" class="certificate-card" onclick="openCertificate('certificate-soft-power.webp?fresh=114', this.querySelector('img').alt)">
-<div class="certificate-image-wrap"><img data-section-src="certificate-soft-power.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ เข้าร่วม Thailand's Soft Power Roblox Game Creation Festival" width="1315" height="930" loading="lazy" decoding="async"><noscript><img src="certificate-soft-power.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ เข้าร่วม Thailand's Soft Power Roblox Game Creation Festival" width="1315" height="930" loading="lazy" decoding="async"></noscript></div>
-<div class="certificate-copy">
-<div class="certificate-title" data-i18n="certificateSoftTitle">Thailand’s Soft Power Roblox Game Creation Festival</div>
-<div class="certificate-meta" data-i18n="certificateSoftMeta">เกียรติบัตรเข้าร่วมการแข่งขัน ระดับมัธยมศึกษา/ปวช. · 30 สิงหาคม 2569</div>
-<div class="certificate-open" data-i18n="certificateOpen">แตะเพื่อดูภาพขนาดเต็ม</div>
-</div>
-</button>
-<button type="button" class="certificate-card" onclick="openCertificate('certificate-scratch.webp?fresh=114', this.querySelector('img').alt)">
-<div class="certificate-image-wrap"><img data-section-src="certificate-scratch.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ รางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch" width="1170" height="782" loading="lazy" decoding="async"><noscript><img src="certificate-scratch.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ รางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch" width="1170" height="782" loading="lazy" decoding="async"></noscript></div>
-<div class="certificate-copy">
-<div class="certificate-title" data-i18n="certificateScratchTitle">การแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch</div>
-<div class="certificate-meta" data-i18n="certificateScratchMeta">รางวัลชนะเลิศ ระดับชั้นมัธยมศึกษาตอนต้น · 18 สิงหาคม 2565</div>
-<div class="certificate-open" data-i18n="certificateOpen">แตะเพื่อดูภาพขนาดเต็ม</div>
-</div>
-</button>
-</div>
-</section>
+
 
 <!-- 8. PC SPECIFICATIONS -->
-<div class="item col-4 specs-section">
+<div class="item col-4 specs-section" id="specs-section" hidden style="display:none;" aria-hidden="true">
 <h2 class="item-label" style="justify-content:flex-start;margin-bottom:16px;">
 <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;filter:drop-shadow(0 0 3px #60a5fa) drop-shadow(0 0 8px rgba(96,165,250,0.6));"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-<span id="t-pc-hdr">PC SPECIFICATIONS (คอมประกอบเอง ม.3)</span>
+<span id="t-pc-hdr">PC SPECIFICATIONS</span>
 </h2>
 <div class="specs-grid">
 <div class="spec-box">
-<div class="spec-purchase-date" style="color:#60a5fa;"><span data-i18n="purchasedOn">ซื้อเมื่อ</span><time datetime="2024-09-26T09:29">26/09/2024 09:29</time></div>
+<div class="spec-purchase-date" style="color:#60a5fa;"><span>ซื้อเมื่อ</span><time datetime="2024-09-26T09:29">26/09/2024 09:29</time></div>
 <div style="font-size:16.5px;font-weight:600;color:#60a5fa;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
-<span>BASE SPEC</span>
-<span style="font-size:13px;background:rgba(96,165,250,0.12);padding:3px 8px;border-radius:5px;">SYSTEM</span>
+<span>สเปกเริ่มต้น</span>
+<span style="font-size:13px;background:rgba(96,165,250,0.12);padding:3px 8px;border-radius:5px;">ระบบ</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:8px;font-size:16.5px;flex-grow:1;">
 <div style="display:flex;justify-content:space-between;"><span style="color:#94a3b8;">CPU</span> <span>INTEL I5-3470 <span style="color:#60a5fa;font-weight:600;">x1</span></span></div>
@@ -499,48 +506,48 @@ INSTAGRAM
 <div style="display:flex;justify-content:space-between;"><span style="color:#94a3b8;">RAM</span> <span>DDR3 4GB <span style="color:#60a5fa;font-weight:600;">x1</span></span></div>
 <div style="display:flex;justify-content:space-between;"><span style="color:#94a3b8;">HDD</span> <span>500GB <span style="color:#60a5fa;font-weight:600;">x1</span></span></div>
 <div style="display:flex;justify-content:space-between;"><span style="color:#94a3b8;">CASE</span> <span>OPTIPLEX 7010 <span style="color:#60a5fa;font-weight:600;">x1</span></span></div>
-<div style="margin-top:auto;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.08);display:flex;justify-content:space-between;"><span style="color:#94a3b8;font-size:15px;" data-i18n="subtotal">SUBTOTAL</span> <span style="color:#60a5fa;font-weight:600;">฿1,232</span></div>
+<div style="margin-top:auto;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.08);display:flex;justify-content:space-between;"><span style="color:#94a3b8;font-size:15px;" >ยอดรวม</span> <span style="color:#60a5fa;font-weight:600;">฿1,232</span></div>
 </div>
 </div>
 
 <div class="spec-box">
-<div class="spec-purchase-date" style="color:#c084fc;"><span data-i18n="purchasedOn">ซื้อเมื่อ</span><time datetime="2024-11-20T11:42">20/11/24 11:42</time></div>
+<div class="spec-purchase-date" style="color:#c084fc;"><span>ซื้อเมื่อ</span><time datetime="2024-11-20T11:42">20/11/24 11:42</time></div>
 <div style="font-size:16.5px;font-weight:600;color:#c084fc;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
-<span>GRAPHICS CARD</span>
-<span style="font-size:13px;background:rgba(168,85,247,0.12);padding:3px 8px;border-radius:5px;">GPU</span>
+<span>การ์ดจอแยก</span>
+<span style="font-size:13px;background:rgba(168,85,247,0.12);padding:3px 8px;border-radius:5px;">การ์ดจอ</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:8px;font-size:16.5px;flex-grow:1;">
 <div style="display:flex;justify-content:space-between;"><span style="color:#94a3b8;">GPU</span> <span>R7 250X 1GB <span style="color:#c084fc;font-weight:600;">x1</span></span></div>
-<div style="margin-top:auto;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.08);display:flex;justify-content:space-between;"><span style="color:#94a3b8;font-size:15px;" data-i18n="subtotal">SUBTOTAL</span> <span style="color:#c084fc;font-weight:600;">฿580</span></div>
+<div style="margin-top:auto;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.08);display:flex;justify-content:space-between;"><span style="color:#94a3b8;font-size:15px;" >ยอดรวม</span> <span style="color:#c084fc;font-weight:600;">฿580</span></div>
 </div>
 </div>
 
 <div class="spec-box">
-<div class="spec-purchase-date" style="color:#34d399;"><span data-i18n="purchasedOn">ซื้อเมื่อ</span><time datetime="2024-09-29T01:33">29/09/2024 01:33</time></div>
+<div class="spec-purchase-date" style="color:#34d399;"><span>ซื้อเมื่อ</span><time datetime="2024-09-29T01:33">29/09/2024 01:33</time></div>
 <div style="font-size:16.5px;font-weight:600;color:#34d399;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
-<span>RAM UPGRADE</span>
-<span style="font-size:13px;background:rgba(52,211,153,0.12);padding:3px 8px;border-radius:5px;">MEMORY</span>
+<span>อัปเกรดแรม</span>
+<span style="font-size:13px;background:rgba(52,211,153,0.12);padding:3px 8px;border-radius:5px;">หน่วยความจำ</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:8px;font-size:16.5px;flex-grow:1;">
 <div style="display:flex;justify-content:space-between;"><span style="color:#94a3b8;">RAM</span> <span>DDR3 8GB 1600MHz <span style="color:#34d399;font-weight:600;">x2</span></span></div>
-<div style="margin-top:auto;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.08);display:flex;justify-content:space-between;"><span style="color:#94a3b8;font-size:15px;" data-i18n="subtotal">SUBTOTAL</span> <span style="color:#34d399;font-weight:600;">฿392</span></div>
+<div style="margin-top:auto;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.08);display:flex;justify-content:space-between;"><span style="color:#94a3b8;font-size:15px;" >ยอดรวม</span> <span style="color:#34d399;font-weight:600;">฿392</span></div>
 </div>
 </div>
 </div>
 </div>
 
 <!-- 9. DOWNLOADS HUB -->
-<div class="item col-4" style="align-items:center;text-align:center;padding:26px 18px 8px;" id="downloads-section">
-<h2 class="item-label" style="justify-content:center;margin-bottom:18px;gap:8px;">
+<div class="item col-4" style="align-items:center;text-align:center;padding:12px 18px 6px;" id="downloads-section">
+<h2 class="item-label" style="justify-content:center;margin-bottom:6px;gap:8px;">
 <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M12 3v10m-4-4 4 4 4-4" stroke="#fff" stroke-width="2.2"/>
 <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="url(#dl-hdr-grad)" stroke-width="2.2"/>
 </svg>
-<span id="t-dl-hdr">PROJECTS & DOWNLOADS</span>
+<span id="t-dl-hdr">ดาวน์โหลดโปรเจกต์</span>
 
 </h2>
-<p class="download-intro"><span>Apps by SEEN</span><span class="download-intro-divider" aria-hidden="true">·</span><span>Windows &amp; Android</span></p>
-<p class="portfolio-section-copy" data-i18n="portfolioProjectsText">ผลงานแอปสำหรับ Windows และ Android ที่ผมสร้างขึ้น เลือกดูแต่ละโปรเจกต์และดาวน์โหลดไปลองใช้ได้</p>
+<p class="download-intro" style="margin:2px 0 4px;font-size:12.5px;"><span>Apps by SEEN</span><span class="download-intro-divider" aria-hidden="true">·</span><span>Windows และ Android</span></p>
+<p class="portfolio-section-copy" style="margin:0 0 10px;font-size:13px;line-height:1.4;">ผลงานแอปสำหรับ Windows และ Android ที่ผมสร้างขึ้น เลือกดูแต่ละโปรเจกต์และดาวน์โหลดไปลองใช้ได้</p>
 <div class="download-platforms">
 <section class="download-platform" aria-labelledby="windows-downloads-title">
 <h3 class="download-platform-title" id="windows-downloads-title">
@@ -551,13 +558,13 @@ INSTAGRAM
 <a class="btn" id="autosystem" href="Auto%20System.exe" download="Auto System.exe" onclick="event.preventDefault();triggerDownload('Auto System.exe')">
 <span class="project-preview preview-system"><img class="project-real-image" data-section-src="autosystem-preview.png?v=1" alt="หน้าตาโปรแกรม AutoSystem: ตั้งค่าคลิกอัตโนมัติ บันทึกและเล่นมาโคร" width="474" height="472" loading="lazy" decoding="async"><noscript><img class="project-real-image" src="autosystem-preview.png?v=1" alt="หน้าตาโปรแกรม AutoSystem" width="474" height="472" loading="lazy" decoding="async"></noscript></span>
 <img data-section-src="exe.webp?fresh=114" alt="AutoSystem" width="22" height="22" loading="lazy" decoding="async"><noscript><img src="exe.webp?fresh=114" alt="AutoSystem" width="22" height="22" loading="lazy" decoding="async"></noscript>
-<span class="download-file"><span class="download-name">AutoSystem</span><span class="project-description" data-i18n="portfolioAutoDescription">เครื่องมือคลิกอัตโนมัติ บันทึกและเล่นมาโครบน Windows</span><span class="download-meta">EXE · 68.43 MB</span></span>
+<span class="download-file"><span class="download-name">AutoSystem</span><span class="project-description">เครื่องมือคลิกอัตโนมัติ บันทึกและเล่นมาโครบน Windows</span><span class="download-meta">EXE · 68.43 MB</span></span>
 <svg class="download-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4"/></svg>
 </a>
 <a class="btn" id="paintstudio" href="PaintStudio.exe" download onclick="event.preventDefault();triggerDownload('PaintStudio.exe')">
 <span class="project-preview preview-paint"><img class="project-real-image" data-section-src="paintstudio-preview-dark.webp?v=1" alt="ภาพพรีวิว PaintStudio โทนดำ พร้อมตัวอย่างงานวาดขาวเทา เครื่องมือ สี และเลเยอร์" width="1320" height="900" loading="lazy" decoding="async"><noscript><img class="project-real-image" src="paintstudio-preview-dark.webp?v=1" alt="หน้าตาโปรแกรม PaintStudio" width="1320" height="900" loading="lazy" decoding="async"></noscript></span>
 <img data-section-src="paintapp-icon.webp?fresh=114" alt="PaintStudio" width="22" height="22" loading="lazy" decoding="async"><noscript><img src="paintapp-icon.webp?fresh=114" alt="PaintStudio" width="22" height="22" loading="lazy" decoding="async"></noscript>
-<span class="download-file"><span class="download-name">PaintStudio</span><span class="project-description" data-i18n="portfolioPaintDescription">โปรเจกต์แอปวาดภาพและงานสร้างสรรค์</span><span class="download-meta">EXE · 0.90 MB</span></span>
+<span class="download-file"><span class="download-name">PaintStudio</span><span class="project-description">โปรเจกต์แอปวาดภาพและงานสร้างสรรค์</span><span class="download-meta">EXE · 0.90 MB</span></span>
 <svg class="download-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4"/></svg>
 </a>
 </div>
@@ -571,9 +578,37 @@ INSTAGRAM
 <a class="btn" id="gps-cam" href="GPS%20Cam.apk" download="GPS Cam.apk" onclick="event.preventDefault();triggerDownload('GPS Cam.apk')">
 <span class="project-preview preview-gps"><span class="gps-phone"><img class="project-real-image" data-section-src="gps-cam-mobile-portrait.webp?v=1" alt="ภาพจำลอง GPS Cam ขณะใช้งานบนมือถือ Android แนวตั้ง พร้อมหน้าปัด 94 km/h และเข็มทิศ" width="720" height="1560" loading="lazy" decoding="async"><noscript><img class="project-real-image" src="gps-cam-mobile-portrait.webp?v=1" alt="ภาพจำลอง GPS Cam บนมือถือ Android แนวตั้ง" width="720" height="1560" loading="lazy" decoding="async"></noscript></span></span>
 <img data-section-src="apk.webp?fresh=114" alt="GPS Cam" style="border-radius:4px;" width="22" height="22" loading="lazy" decoding="async"><noscript><img src="apk.webp?fresh=114" alt="GPS Cam" style="border-radius:4px;" width="22" height="22" loading="lazy" decoding="async"></noscript>
-<span class="download-file"><span class="download-name">GPS Cam</span><span class="project-description" data-i18n="portfolioGpsDescription">โปรเจกต์แอปสำหรับโทรศัพท์ Android</span><span class="download-meta">APK · 44.46 KB</span></span>
+<span class="download-file"><span class="download-name">GPS Cam</span><span class="project-description">โปรเจกต์แอปสำหรับโทรศัพท์ Android</span><span class="download-meta">APK · 44.46 KB</span></span>
 <svg class="download-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4"/></svg>
 </a>
+
+<div class="certificates-slot-card" id="certificates-section">
+<div class="slot-certs-header">
+<div class="item-label" style="justify-content:flex-start;gap:8px;font-size:15px;letter-spacing:0.5px;text-transform:none;">
+<svg viewBox="0 0 24 24" fill="none" stroke="url(#skills-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M8 4h8v3a4 4 0 0 1-8 0V4z"></path><path d="M8 6H5v1a3 3 0 0 0 3 3m8-4h3v1a3 3 0 0 1-3 3M12 11v5m-4 4h8m-6-4h4"></path></svg>
+<span>เกียรติบัตรและรางวัล</span>
+</div>
+<span class="slot-certs-count">02</span>
+</div>
+<div class="slot-certs-grid">
+<button type="button" class="certificate-card slot-cert-item" onclick="openCertificate('certificate-soft-power.webp?fresh=114', this.querySelector('img').alt)">
+<div class="certificate-image-wrap"><img data-section-src="certificate-soft-power.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ เข้าร่วม Thailand's Soft Power Roblox Game Creation Festival" width="1315" height="930" loading="lazy" decoding="async"><noscript><img src="certificate-soft-power.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ เข้าร่วม Thailand's Soft Power Roblox Game Creation Festival" width="1315" height="930" loading="lazy" decoding="async"></noscript></div>
+<div class="certificate-copy">
+<div class="certificate-title">Thailand’s Soft Power Roblox Game Creation Festival</div>
+<div class="certificate-meta">เข้าร่วมแข่งขัน · 30 ส.ค. 2569</div>
+<div class="certificate-open">แตะเพื่อดูภาพขนาดเต็ม ↗</div>
+</div>
+</button>
+<button type="button" class="certificate-card slot-cert-item" onclick="openCertificate('certificate-scratch.webp?fresh=114', this.querySelector('img').alt)">
+<div class="certificate-image-wrap"><img data-section-src="certificate-scratch.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ รางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch" width="1170" height="782" loading="lazy" decoding="async"><noscript><img src="certificate-scratch.webp?fresh=114" alt="เกียรติบัตร ณัฐนันท์ ตรีทศ รางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch" width="1170" height="782" loading="lazy" decoding="async"></noscript></div>
+<div class="certificate-copy">
+<div class="certificate-title">การแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch</div>
+<div class="certificate-meta">รางวัลชนะเลิศ · 18 ส.ค. 2565</div>
+<div class="certificate-open">แตะเพื่อดูภาพขนาดเต็ม ↗</div>
+</div>
+</button>
+</div>
+</div>
 </div>
 </section>
 <p class="download-source">SEEN / seen1236 <a href="https://github.com/SEEN1236" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>
@@ -582,8 +617,8 @@ INSTAGRAM
 
 <!-- 9. FOOTER -->
 <footer class="footer portfolio-contact" id="contact-section">
-<h2 data-i18n="portfolioContactHeading">ติดต่อ & ติดตามผลงาน</h2>
-<p data-i18n="portfolioContactText">พูดคุยเกี่ยวกับผลงาน หรือส่งความคิดเห็นถึงผมได้ทางอีเมล</p>
+<h2>ติดต่อ & ติดตามผลงาน</h2>
+<p>พูดคุยเกี่ยวกับผลงาน หรือส่งความคิดเห็นถึงผมได้ทางอีเมล</p>
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nattanantreetos@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-gmail-wrap" style="text-decoration:none;color:inherit;" onclick="handleEmailClick(event)" title="ส่งอีเมลถึง nattanantreetos@gmail.com">
 <svg class="gmail-icon" viewBox="0 0 24 24" fill="none">
 <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6Z" fill="#EA4335" fill-opacity="0.2"/>
@@ -598,16 +633,13 @@ INSTAGRAM
 // DOM order, keyboard navigation and visual order all follow the portfolio flow.
 (function(){
     var portfolio = document.querySelector('main.bento');
-    ['hero-section','downloads-section','skills-section','certificates-section',
-     'story-section','info-section','profile-details-section','personal-status-section',
-     'social-section','contact-section'].forEach(function(id){
+    ['hero-section','story-section','personal-status-section','social-section',
+     'skills-section','downloads-section',
+     'specs-section','contact-section'].forEach(function(id){
         var section = document.getElementById(id);
         if(section) portfolio.appendChild(section);
     });
-    var equipment = portfolio.querySelector('.specs-section');
-    if(equipment) portfolio.insertBefore(equipment, document.getElementById('personal-status-section'));
-    // Preserve all existing text; arrange related headings and paragraphs in columns.
-    var summary = portfolio.querySelector('.profile-summary');
+    var summary = document.querySelector('.profile-summary');
     if(summary){
         var group = null;
         Array.prototype.slice.call(summary.children).forEach(function(node){

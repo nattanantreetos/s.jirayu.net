@@ -1,261 +1,4 @@
-// LANGUAGE TOGGLE ENGINE (TH / ENG)
-var currentLang = 'en';
-var i18nData = {
-    th: {
-        infoHdr: 'INFO & STATUS',
-        ageLbl: 'อายุ',
-        foodLbl: 'อาหารที่ชอบ',
-        foodVal: 'ไข่ดาว',
-        presentLbl: 'ที่อยู่ปัจจุบัน',
-        presentVal: 'พระนครศรีอยุธยา',
-        uptimeHdr: 'UPTIME',
-        bdayHdr: 'NEXT BIRTHDAY',
-        days: 'วัน',
-        hours: 'ชม.',
-        mins: 'นาที',
-        secs: 'วินาที',
-        skillsHdr: 'SKILLS & EXPERTISE',
-        followers: 'ผู้ติดตาม',
-        ttSub: 'บัญชีใหม่',
-        igSub: 'เข้าร่วม ก.ค. 2022',
-        noteHdr: 'เกี่ยวกับ ณัฐนันท์ ตรีทศ (SEEN)',
-        portfolioIntro: 'สร้างแอป ทดลองเทคโนโลยี และเรียนรู้ผ่านการลงมือทำ — รวมผลงาน ทักษะ และเรื่องราวของผมไว้ที่นี่',
-        portfolioWorkAction: 'ดูผลงานของผม ↗',
-        portfolioProjectsLabel: 'โปรเจกต์',
-        portfolioAwardsLabel: 'เกียรติบัตร',
-        portfolioLearningLabel: 'เรียนรู้เสมอ',
-        portfolioAutoDescription: 'เครื่องมือคลิกอัตโนมัติ บันทึกและเล่นมาโครบน Windows',
-        autoClickFeature: 'คลิกอัตโนมัติ',
-        autoMacroFeature: 'บันทึกมาโคร',
-        autoLoopFeature: 'เล่นซ้ำ',
-        autoDownloadAction: 'ดาวน์โหลดสำหรับ Windows',
-        portfolioPaintDescription: 'โปรเจกต์แอปวาดภาพและงานสร้างสรรค์',
-        portfolioGpsDescription: 'โปรเจกต์แอปสำหรับโทรศัพท์ Android',
-        portfolioContactAction: 'ติดต่อผม',
-        portfolioContactHeading: 'ติดต่อ & ติดตามผลงาน',
-        portfolioContactText: 'พูดคุยเกี่ยวกับผลงาน หรือส่งความคิดเห็นถึงผมได้ทางอีเมล',
-        portfolioProjectsText: 'ผลงานแอปสำหรับ Windows และ Android ที่ผมสร้างขึ้น เลือกดูแต่ละโปรเจกต์และดาวน์โหลดไปลองใช้ได้',
-        profileDetailsHeading: 'ความสนใจ ผลงาน และช่องทางของ SEEN',
-        profileSkillsHeading: 'ความสนใจและทักษะ',
-        profileIdentityHeading: 'ณัฐนันท์ ตรีทศ หรือ SEEN คือใคร?',
-        profileAwardsHeading: 'ผลงานการแข่งขันและเกียรติบัตรของซีน',
-        profileAwardsText: 'เกียรติบัตรของ ณัฐนันท์ ตรีทศ ได้แก่การเข้าร่วม Thailand’s Soft Power Roblox Game Creation Festival และรางวัลชนะเลิศการแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch ระดับมัธยมศึกษาตอนต้น ดูภาพเกียรติบัตรและรายละเอียดได้ในส่วนเกียรติบัตรและรางวัล',
-        profileAwardsLink: 'ดูเกียรติบัตรของ ณัฐนันท์ ตรีทศ (SEEN)',
-        profileSkillsText: 'ณัฐนันท์ ตรีทศ (Natthanan Treetos) สนใจการประกอบคอมพิวเตอร์ และมีทักษะด้าน ADB และ Android, Video Effects, การตัดต่อ, AI Integration, การสร้างโมเดล 3D, Kotlin และ Lua โดยประกอบคอมพิวเตอร์ใช้เองตั้งแต่ ม.3 และมีความฝันอยากเป็นครู',
-        profileWorksHeading: 'ผลงานที่เปิดให้ดาวน์โหลด',
-        profileWorksText: 'ผลงานในเว็บไซต์นี้ประกอบด้วย GPS Cam สำหรับ Android และ AutoSystem, PaintStudio สำหรับ Windows เลือกดาวน์โหลดได้จากส่วนผลงานด้านล่าง',
-        profileWorksLink: 'ดูผลงานและไฟล์ดาวน์โหลด',
-        profileAccountsHeading: 'บัญชีโซเชียลและซอร์สโค้ด',
-        profileAccountsText: 'ซีนใช้ชื่อ SEEN หรือ seen1236 บนโลกออนไลน์ ติดตามผลงานและเรื่องราวผ่านบัญชีต่อไปนี้',
-        certificatesHdr: 'เกียรติบัตรและรางวัล',
-        certificateSoftTitle: 'Thailand’s Soft Power Roblox Game Creation Festival',
-        certificateSoftMeta: 'เกียรติบัตรเข้าร่วมการแข่งขัน ระดับมัธยมศึกษา/ปวช. · 30 สิงหาคม 2569',
-        certificateScratchTitle: 'การแข่งขันสร้างชิ้นงานด้วยโปรแกรม Scratch',
-        certificateScratchMeta: 'รางวัลชนะเลิศ ระดับชั้นมัธยมศึกษาตอนต้น · 18 สิงหาคม 2565',
-        certificateOpen: 'แตะเพื่อดูภาพขนาดเต็ม',
-        noteP0: 'สวัสดี ผมชื่อ ณัฐนันท์ ตรีทศ ชื่อเล่นซีน (<span style="color:#60a5fa;">SEEN</span>) ใช้ชื่อ seen1236 บนโลกออนไลน์',
-        noteP1: 'คุณเข้ามาในเว็บนี้เพื่อโหลดอะไรหรือเปล่า? ข้างล่างนี้มีปุ่มดาวน์โหลดอยู่ — <span style="color:#4ade80;font-weight:500;text-shadow:0 0 6px rgba(74,222,128,0.35);">ไม่มีไวรัสแน่นอน</span> เป็นแอปออฟไลน์ 100% ผมเขียนไว้ใช้เอง แต่ถ้าเข้ามาเห็นก็ลองโหลดไปใช้ได้เลย',
-        noteP2: 'ในอนาคตผมอยากเป็น <span style="color:#ffffff;font-weight:600;">ครู</span> ตอนโตขึ้นไม่รู้ว่าจะได้เป็นไหม แต่ขอให้ได้เป็นเถอะ',
-        noteP3: 'คอมพิวเตอร์เครื่องนี้ซื้อตอน <span style="color:#60a5fa;font-weight:600;text-shadow:0 0 8px rgba(96,165,250,0.4);">ม.3</span> มาประกอบเอง',
-        noteDate: 'เขียนเมื่อ: วันอาทิตย์ที่ 5 กรกฎาคม 2026',
-        pcHdr: 'PC SPECIFICATIONS (คอมประกอบเอง ม.3)',
-        dlHdr: 'ผลงาน & ดาวน์โหลด',
-        subtotal: 'รวม',
-        purchasedOn: 'ซื้อเมื่อ',
-        copyBtn: 'คัดลอก',
-        copiedBtn: 'คัดลอกแล้ว! ✓',
-        navHome: 'หน้าหลัก',
-        navStory: 'เรื่องราว',
-        navCertificates: 'เกียรติบัตร',
-        navDownload: 'ดาวน์โหลด'
-    },
-    en: {
-        infoHdr: 'INFO & STATUS',
-        ageLbl: 'Age',
-        foodLbl: 'Favorite Food',
-        foodVal: 'Fried Egg',
-        presentLbl: 'Location',
-        presentVal: 'Phra Nakhon Si Ayutthaya',
-        uptimeHdr: 'UPTIME',
-        bdayHdr: 'NEXT BIRTHDAY',
-        days: 'DAYS',
-        hours: 'HOURS',
-        mins: 'MINS',
-        secs: 'SECS',
-        skillsHdr: 'SKILLS & EXPERTISE',
-        followers: 'FOLLOWERS',
-        ttSub: 'New Account',
-        igSub: 'Joined Jul 2022',
-        noteHdr: 'About Natthanan Treetos (SEEN)',
-        portfolioIntro: 'Building apps, exploring technology and learning by doing — a collection of my projects, skills and personal story.',
-        portfolioWorkAction: 'Explore my projects ↗',
-        portfolioProjectsLabel: 'PROJECTS',
-        portfolioAwardsLabel: 'CERTIFICATES',
-        portfolioLearningLabel: 'ALWAYS LEARNING',
-        portfolioAutoDescription: 'Auto clicking, macro recording and playback for Windows',
-        autoClickFeature: 'Auto click',
-        autoMacroFeature: 'Macro recording',
-        autoLoopFeature: 'Loop playback',
-        autoDownloadAction: 'Download for Windows',
-        portfolioPaintDescription: 'A drawing and creative app project',
-        portfolioGpsDescription: 'A mobile app project for Android',
-        portfolioContactAction: 'Contact me',
-        portfolioContactHeading: 'Contact & follow my work',
-        portfolioContactText: 'Get in touch by email to talk about my projects or share your feedback.',
-        portfolioProjectsText: 'My Windows and Android app projects. Explore each project and download an app to try it.',
-        profileDetailsHeading: 'SEEN: interests, projects and profiles',
-        profileSkillsHeading: 'Interests and skills',
-        profileIdentityHeading: 'Who is Natthanan Treetos (SEEN)?',
-        profileAwardsHeading: 'SEEN’s competitions and certificates',
-        profileAwardsText: 'Natthanan Treetos received a participation certificate for Thailand’s Soft Power Roblox Game Creation Festival and a first-place award in a lower-secondary Scratch project competition. Certificate images and details are available in the Certificates and Awards section.',
-        profileAwardsLink: 'View Natthanan Treetos (SEEN)’s certificates',
-        profileSkillsText: 'Natthanan Treetos (ณัฐนันท์ ตรีทศ) is interested in building computers, with skills in ADB and Android, video effects, editing, AI integration, 3D modeling, Kotlin and Lua. He assembled his own computer in Grade 9 (M.3) and hopes to become a teacher.',
-        profileWorksHeading: 'Projects available to download',
-        profileWorksText: 'Projects on this website include GPS Cam for Android and AutoSystem and PaintStudio for Windows. Download links are available in the projects section below.',
-        profileWorksLink: 'View projects and downloads',
-        profileAccountsHeading: 'Social profiles and source code',
-        profileAccountsText: 'Known online as SEEN or seen1236, he shares projects and updates through the following accounts.',
-        certificatesHdr: 'CERTIFICATES & AWARDS',
-        certificateSoftTitle: 'Thailand’s Soft Power Roblox Game Creation Festival',
-        certificateSoftMeta: 'Competition participation certificate, secondary/vocational level · August 30, 2026',
-        certificateScratchTitle: 'Scratch Creative Computer Game Competition',
-        certificateScratchMeta: 'First-place award, lower secondary level · August 18, 2022',
-        certificateOpen: 'Tap to view full-size image',
-        noteP0: 'Hello, I\'m Natthanan Treetos (<span lang="th">ณัฐนันท์ ตรีทศ</span>), nicknamed <span style="color:#60a5fa;">SEEN</span> and known online as seen1236.',
-        noteP1: 'Did you visit this site to download something? The download buttons are right below — <span style="color:#4ade80;font-weight:500;text-shadow:0 0 6px rgba(74,222,128,0.35);">100% virus-free</span>, offline apps I wrote for my own use. Feel free to download and try them!',
-        noteP2: 'In the future, I want to become a <span style="color:#ffffff;font-weight:600;">Teacher</span>. Growing up, I don\'t know if I will, but I really hope I do.',
-        noteP3: 'I bought and assembled this computer myself back in <span style="color:#60a5fa;font-weight:600;text-shadow:0 0 8px rgba(96,165,250,0.4);">Grade 9 (M.3)</span>.',
-        noteDate: 'Written on: Sunday, July 5, 2026',
-        pcHdr: 'PC SPECIFICATIONS (Custom Built - Grade 9)',
-        dlHdr: 'PROJECTS & DOWNLOADS',
-        subtotal: 'SUBTOTAL',
-        purchasedOn: 'Purchased',
-        copyBtn: 'Copy',
-        copiedBtn: 'Copied! ✓',
-        navHome: 'Home',
-        navStory: 'Story',
-        navCertificates: 'Certificates',
-        navDownload: 'Downloads'
-    }
-};
-
-var languageApplied = false;
-var languageTransitions = new WeakMap();
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-function updateLanguageText(el, value, asHtml, animated, visible){
-    if(!el) return;
-    var previous = languageTransitions.get(el);
-    if(previous) previous.cancel();
-    languageTransitions.delete(el);
-    var write = function(){
-        if(asHtml) el.innerHTML = value;
-        else el.textContent = value;
-    };
-    if((asHtml ? el.innerHTML : el.textContent) === value) return;
-    if(!animated || !el.animate || !visible){
-        write();
-        return;
-    }
-    // Keep a gentle crossfade in reduced-motion mode, without blur or movement.
-    var gentle = reducedMotion.matches;
-    var clearFrame = gentle ? {opacity:1} : {opacity:1,filter:'blur(0px)'};
-    var dissolvedFrame = gentle ? {opacity:0} : {opacity:0,filter:'blur(6px)'};
-    // Animate visible text only; retain its markup and avoid per-letter DOM nodes.
-    var outgoing = el.animate([
-        clearFrame,
-        Object.assign({offset:.85},dissolvedFrame),
-        dissolvedFrame
-    ], {duration:gentle ? 140 : 320,easing:'ease-in-out',fill:'forwards'});
-    languageTransitions.set(el,outgoing);
-    outgoing.finished.then(function(){
-        if(languageTransitions.get(el) !== outgoing) return;
-        write();
-        outgoing.cancel();
-        var incoming = el.animate([
-            dissolvedFrame,
-            clearFrame
-        ], {duration:gentle ? 180 : 420,easing:'ease-out'});
-        languageTransitions.set(el,incoming);
-        incoming.finished.then(function(){
-            if(languageTransitions.get(el) === incoming) languageTransitions.delete(el);
-        }).catch(function(){});
-    }).catch(function(){});
-}
-function setLanguage(lang){
-    if(lang !== 'th' && lang !== 'en') lang = 'th';
-    if(languageApplied && lang === currentLang) return;
-    var animateLanguage = languageApplied;
-    var d = i18nData[lang];
-    if(!d) return;
-    var targets = [];
-    var queueText = function(el, value, asHtml){
-        if(el) targets.push({el:el, value:value, asHtml:asHtml, visible:false});
-    };
-    var setEl = function(id, html){
-        queueText(document.getElementById(id), html, true);
-    };
-
-    setEl('t-info-hdr', d.infoHdr);
-    setEl('t-age-lbl', d.ageLbl);
-    setEl('t-food-lbl', d.foodLbl);
-    setEl('t-food-val', d.foodVal);
-    setEl('t-present-lbl', d.presentLbl);
-    setEl('t-present-val', d.presentVal);
-    setEl('t-uptime-hdr', d.uptimeHdr);
-    setEl('t-bday-hdr', d.bdayHdr);
-    setEl('t-skills-hdr', d.skillsHdr);
-    setEl('t-tt-sub', d.ttSub);
-    setEl('t-ig-sub', d.igSub);
-    setEl('t-note-hdr', d.noteHdr);
-    setEl('t-note-p0', d.noteP0);
-    setEl('t-note-p1', d.noteP1);
-    setEl('t-note-p2', d.noteP2);
-    setEl('t-note-p3', d.noteP3);
-    setEl('t-note-date', d.noteDate);
-    setEl('t-pc-hdr', d.pcHdr);
-    setEl('t-dl-hdr', d.dlHdr);
-    var btnCopy = document.getElementById('copy-btn-label');
-    queueText(btnCopy, d.copyBtn, false);
-
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-        var key = el.getAttribute('data-i18n');
-        if(d[key]) queueText(el, d[key], false);
-    });
-    // Measure every changed target before cancelling animations or writing text.
-    // Offscreen language changes can alter layout, so keep reads in one batch.
-    if(animateLanguage){
-        var viewportHeight = window.innerHeight;
-        targets.forEach(function(target){
-            var el = target.el;
-            if(!el.animate || (target.asHtml ? el.innerHTML : el.textContent) === target.value) return;
-            var rect = el.getBoundingClientRect();
-            target.visible = !!(rect.width && rect.height && rect.bottom > 0 && rect.top < viewportHeight);
-        });
-    }
-    languageApplied = true;
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    var wrap = document.getElementById('lang-switch');
-    var languageButton = document.getElementById('btn-lang-toggle');
-    if(wrap) wrap.classList.toggle('en-active', lang === 'en');
-    if(languageButton){
-        languageButton.textContent = lang === 'en' ? 'ENG' : 'TH';
-        languageButton.setAttribute('aria-label', lang === 'en' ? 'Language: English. Switch to Thai' : 'ภาษาไทย: กดเพื่อเปลี่ยนเป็นภาษาอังกฤษ');
-        languageButton.title = lang === 'en' ? 'Switch to Thai' : 'เปลี่ยนเป็นภาษาอังกฤษ';
-    }
-    targets.forEach(function(target){
-        updateLanguageText(target.el, target.value, target.asHtml, animateLanguage, target.visible);
-    });
-}
-
-// Each visit starts fresh; language changes last only for this page.
-setLanguage('en');
-
-function toggleLanguage(button){
-    playLanguageTween(button);
-    setLanguage(currentLang === 'en' ? 'th' : 'en');
-}
-
 
 var isProgrammaticScrolling = false;
 var isNavScrollLocked = false;
@@ -313,21 +56,7 @@ window.addEventListener('resize',scheduleNavActiveLine,{passive:true});
 if(navWrap && 'ResizeObserver' in window) new ResizeObserver(scheduleNavActiveLine).observe(navWrap);
 if(document.fonts) document.fonts.ready.then(scheduleNavActiveLine);
 
-function playControlTween(button, group){
-    var targets = [group, button];
-    if(group.id === 'lang-switch'){
-        var fill = group.querySelector('.lang-slider-fill');
-        if(fill) targets.push(fill);
-    }
-    targets.forEach(function(el){ el.classList.remove('control-tap'); });
-    // Restart both animations together, including rapid clicks on the active language.
-    void group.offsetWidth;
-    targets.forEach(function(el){ el.classList.add('control-tap'); });
-}
 
-function playLanguageTween(button){
-    playNavPress(button);
-}
 
 [navWrap].forEach(function(group){
     if(!group) return;
@@ -399,14 +128,15 @@ function smoothScrollTo(targetY, fromWheel, options){
     var startY = window.scrollY;
     var diff = targetY - startY;
     var startTime = performance.now();
+    // Ultra-smooth duration (950ms default) for luxurious gliding
     var duration = options && Number.isFinite(options.duration)
-        ? Math.max(200, Math.min(1400, options.duration)) : 600;
-    var easeInOut = options && options.easing === 'in-out';
+        ? Math.max(300, Math.min(1500, options.duration)) : 950;
     function tick(now){
         var p = Math.min(1, (now - startTime) / duration);
-        var eased = easeInOut
-            ? (p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2)
-            : 1 - Math.pow(1 - p, 3);
+        // Silky quintic ease-in-out curve (นุ่มที่สุดที่ทำได้)
+        var eased = p < 0.5
+            ? 16 * p * p * p * p * p
+            : 1 - Math.pow(-2 * p + 2, 5) / 2;
         window.scrollTo({ top: startY + diff * eased, behavior: 'instant' });
         if(p < 1) scrollTweenFrame = requestAnimationFrame(tick);
         else {
@@ -431,7 +161,7 @@ function startWheelTween(targetY){
         lastTime = now;
         scrollTweenTarget = Math.max(0, Math.min(scrollTweenTarget, navGeometry.maxScroll));
         var distance = scrollTweenTarget - position;
-        if(Math.abs(distance) < 0.5){
+        if(Math.abs(distance) < 0.3){
             window.scrollTo({ top: scrollTweenTarget, behavior: 'instant' });
             scrollTweenFrame = null;
             wheelTweenRunning = false;
@@ -439,7 +169,8 @@ function startWheelTween(targetY){
             if(window.__updatePassedSections) window.__updatePassedSections();
             return;
         }
-        position += distance * (1 - Math.exp(-elapsed / 95));
+        // Softer time constant (160ms) gives a buttery, silky float feel
+        position += distance * (1 - Math.exp(-elapsed / 160));
         window.scrollTo({ top: position, behavior: 'instant' });
         if(window.__updatePassedSections) window.__updatePassedSections();
         scrollTweenFrame = requestAnimationFrame(step);
@@ -493,11 +224,13 @@ function measureNavGeometry(){
     var story = document.getElementById('story-section');
     var certificates = document.getElementById('certificates-section');
     var downloads = document.getElementById('downloads-section');
+    var contact = document.getElementById('contact-section');
     navGeometry.height = window.innerHeight;
     navGeometry.maxScroll = Math.max(0, document.documentElement.scrollHeight - navGeometry.height);
     navGeometry.story = story ? story.getBoundingClientRect().top + y : Infinity;
-    navGeometry.certificates = certificates ? certificates.getBoundingClientRect().top + y : Infinity;
     navGeometry.downloads = downloads ? downloads.getBoundingClientRect().top + y : Infinity;
+    navGeometry.certificates = certificates ? certificates.getBoundingClientRect().top + y : Infinity;
+    navGeometry.contact = contact ? contact.getBoundingClientRect().top + y : Infinity;
     updateActiveNav();
 }
 
@@ -512,13 +245,17 @@ function scheduleNavMeasure(){
 function updateActiveNav(){
     if(isProgrammaticScrolling) return;
     var y = window.scrollY;
-    var trigger = y + navGeometry.height * 0.5;
+    var header = document.querySelector('.site-header');
+    var headerOffset = header ? Math.round(header.getBoundingClientRect().height) + 20 : 90;
+    var trigger = y + headerOffset + 20;
     var activeId = 'btn-nav-home';
-    if(y >= 120){
+    if(navGeometry.maxScroll > 0 && y >= navGeometry.maxScroll - 16){
+        activeId = 'btn-nav-contact';
+    } else if(y >= 80){
         var sections = [
+            {top:navGeometry.story, button:'btn-nav-story'},
             {top:navGeometry.downloads, button:'btn-nav-dl'},
-            {top:navGeometry.certificates, button:'btn-nav-certificates'},
-            {top:navGeometry.story, button:'btn-nav-story'}
+            {top:navGeometry.contact, button:'btn-nav-contact'}
         ].sort(function(a,b){return a.top-b.top;});
         sections.forEach(function(section){
             if(section.top <= trigger) activeId = section.button;
@@ -533,9 +270,11 @@ function scrollToSection(id){
     measureNavGeometry();
     var targetBtnId = 'btn-nav-home';
     if(id === 'story-section') targetBtnId = 'btn-nav-story';
-    else if(id === 'certificates-section') targetBtnId = 'btn-nav-certificates';
-    else if(id === 'downloads-section') targetBtnId = 'btn-nav-dl';
-    var targetY = id === 'hero-section' ? 0 : el.getBoundingClientRect().top + window.scrollY - 65;
+    else if(id === 'downloads-section' || id === 'certificates-section') targetBtnId = 'btn-nav-dl';
+    else if(id === 'contact-section') targetBtnId = 'btn-nav-contact';
+    var header = document.querySelector('.site-header');
+    var headerOffset = header ? Math.round(header.getBoundingClientRect().height) + 16 : 85;
+    var targetY = id === 'hero-section' ? 0 : Math.round(el.getBoundingClientRect().top + window.scrollY - headerOffset);
     smoothScrollTo(Math.max(0, Math.min(targetY, navGeometry.maxScroll)));
     // Apply the clicked state after cancelling any previous tween, so it updates immediately.
     setActiveNav(targetBtnId);
@@ -576,6 +315,27 @@ measureNavGeometry();
         var bounds = part.getBoundingClientRect();
         return bounds.bottom > 0 && bounds.top < window.innerHeight;
     }
+    // Initial load: reveal sections one at a time, in DOM order, slowly.
+    var entranceQueue = [];
+    var entranceTimer = null;
+    function drainEntrance(){
+        entranceTimer = null;
+        if(window.__introHold) return;
+        var part = entranceQueue.shift();
+        if(!part) return;
+        enterPart(part, part.getBoundingClientRect(), true);
+        if(entranceQueue.length) entranceTimer = window.setTimeout(drainEntrance, 320);
+    }
+    function queueEntrance(part){
+        if(entranceQueue.indexOf(part) !== -1) return;
+        entranceQueue.push(part);
+        entranceQueue.sort(function(a, b){ return parts.indexOf(a) - parts.indexOf(b); });
+        if(entranceTimer === null && !window.__introHold) entranceTimer = window.setTimeout(drainEntrance, 60);
+    }
+    // The signature intro releases the staged entrance as its overlay dissolves.
+    window.__seenIntroRelease = function(){
+        if(entranceQueue.length && entranceTimer === null) entranceTimer = window.setTimeout(drainEntrance, 60);
+    };
     function finishAnimation(part){
         var state = states.get(part);
         if(state.animation){
@@ -589,11 +349,14 @@ measureNavGeometry();
     }
     function enterPart(part, bounds, animate){
         var state = states.get(part);
+        var initial = root.classList.contains('page-loading');
         finishAnimation(part);
         state.visible = true;
         loadSectionImages(part);
         part.classList.remove('scroll-passed', 'scroll-passed-bottom');
         part.classList.add('load-ready');
+        var certSub = part.querySelector('#certificates-section');
+        if(certSub) certSub.classList.add('load-ready');
         if(!state.ready){
             state.ready = true;
             revealed++;
@@ -603,14 +366,15 @@ measureNavGeometry();
             }
         }
         // A focused control must stay fully visible, including when Tab scrolls to it.
-        if(!animate || reducedMotion.matches || document.hidden ||
+        // The owner wants the slow staged entrance even with OS reduced motion on.
+        if(!animate || (reducedMotion.matches && !initial) || document.hidden ||
            part.contains(document.activeElement) || typeof part.animate !== 'function') return;
-        var distance = bounds.top < 0 ? -24 : 28;
+        var distance = bounds.top < 0 ? -24 : (initial ? 36 : 28);
         part.classList.add('section-entering');
         var animation = part.animate([
-            {opacity:0.18, transform:'translate3d(0,' + distance + 'px,0)'},
+            {opacity:initial ? 0 : 0.18, transform:'translate3d(0,' + distance + 'px,0)'},
             {opacity:1, transform:'translate3d(0,0,0)'}
-        ], {duration:620, easing:'cubic-bezier(.22,1,.36,1)'});
+        ], {duration:initial ? 1100 : 620, easing:'cubic-bezier(.22,1,.36,1)'});
         state.animation = animation;
         active.add(part);
         function cleanup(){
@@ -644,7 +408,10 @@ measureNavGeometry();
         var revealObserver = new IntersectionObserver(function(entries){
             entries.forEach(function(entry){
                 var part = entry.target, state = states.get(part);
-                if(entry.isIntersecting && !state.visible) enterPart(part, entry.boundingClientRect, true);
+                if(entry.isIntersecting && !state.visible){
+                    if(root.classList.contains('page-loading')) queueEntrance(part);
+                    else enterPart(part, entry.boundingClientRect, true);
+                }
                 // The entrance translation may briefly cross the viewport edge.
                 // Let it finish, then measure its resting position to avoid replay loops.
                 else if(!entry.isIntersecting && !state.animation) state.visible = false;
@@ -681,40 +448,6 @@ measureNavGeometry();
     // Keep its public hook for dialogs, but avoid measuring every card on each
     // scroll frame and promoting invisible filters to compositor layers.
     window.__updatePassedSections = function(){};
-})();
-
-// The white line is an entry-only page loader, never a scroll indicator.
-(function setupEntryLoadBar(){
-    var track = document.querySelector('.scroll-progress-track');
-    var bar = document.getElementById('scroll-progress-bar');
-    if(!track || !bar) return;
-    var finished = false;
-    var startedAt = performance.now();
-    var minimumFillDelay = 560;
-    track.classList.remove('is-complete');
-    bar.style.transform = 'scaleX(.04)';
-
-    function completeToFull(){
-        if(finished) return;
-        finished = true;
-        bar.style.transform = 'scaleX(1)';
-        // Keep the completed line on screen briefly so 100% is always visible.
-        window.setTimeout(function(){ track.classList.add('is-complete'); }, 620);
-    }
-    function finish(){
-        var remaining = Math.max(0, minimumFillDelay - (performance.now() - startedAt));
-        window.setTimeout(completeToFull, remaining);
-    }
-    // Give the first transition one rendered frame before moving to its loading state.
-    window.requestAnimationFrame(function(){
-        window.setTimeout(function(){
-            if(!finished) bar.style.transform = 'scaleX(.78)';
-        }, 40);
-    });
-    if(document.readyState === 'complete') finish();
-    else window.addEventListener('load', finish, {once:true});
-    // A failed third-party image must never leave the page loader on screen.
-    window.setTimeout(finish, 8000);
 })();
 
 function handleEmailClick(e){
@@ -848,7 +581,8 @@ document.addEventListener('keydown',function(event){
     }
 });
 
-window.openAvatar=function(){
+window.openAvatar=function(idx){
+    if(typeof idx === 'number' && avatarImages[idx]) currentSlide = idx;
     if(avatarModalEl){
         if(full){
             full.style.backgroundImage="url('"+avatarImages[currentSlide]+"')";
@@ -879,6 +613,7 @@ function markAvatarPage(){
     if(avatarRoot)avatarRoot.setAttribute('data-profile-page',String(currentSlide+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0'));
 }
 function nextSlide(){
+    return; // Circular dual profile mode: both circles are always visible; no shuffling needed
     if(document.hidden||slides.length<2||isAnyModalOrPopupActive())return;
     var outgoing=slides[currentSlide],incoming=slides[(currentSlide+1)%slides.length];
     var from=getComputedStyle(incoming),front=getComputedStyle(outgoing);
@@ -1148,6 +883,7 @@ window.addEventListener('paste',function(e){
 
     var stars = [];
     var paletteStars = [[], [], []];
+    var TOUCH = window.matchMedia('(pointer: coarse)').matches;
     var baseSpeed = 0.85;
     var scrollVelocity = 0;
     var rafId = null;
@@ -1308,7 +1044,7 @@ window.addEventListener('paste',function(e){
         ctx.clearRect(0, 0, w, h);
 
         var totalSpeed = baseSpeed + scrollVelocity;
-        var hasTails = scrollVelocity > 1.2;
+        var hasTails = scrollVelocity > (TOUCH ? 2.5 : 1.2);
 
         if(!hasTails){
             // AMBIENT DRIFT MODE (99% of browsing time):
@@ -1404,34 +1140,27 @@ window.addEventListener('paste',function(e){
     function loop(now){
         rafId = null;
         if(document.hidden){
-            rafId = null;
             return;
         }
         var elapsed = lastPaint ? Math.min(100, now - lastPaint) : 1000 / 60;
         lastPaint = now;
         var frameStep = elapsed / (1000 / 60);
         // Time-based movement is consistent on 60/120/240 Hz monitors.
-        scrollVelocity *= Math.pow(0.91, frameStep);
-        if(scrollVelocity < 0.01) scrollVelocity = 0;
+        scrollVelocity *= Math.pow(0.92, frameStep);
+        if(scrollVelocity < 0.005) scrollVelocity = 0;
 
         render(frameStep);
-        // Ambient drift needs 30 paints/s; scrolling retains 60. A sleeping
-        // timer avoids scheduling a callback at every 120/240 Hz refresh.
-        var interval = scrollVelocity > 1.2 ? 1000 / 60 : 1000 / 30;
-        wakeTimer = setTimeout(function(){
-            wakeTimer = null;
-            startLoop();
-        }, Math.max(0, interval - 4));
+        rafId = requestAnimationFrame(loop);
     }
 
     function startLoop(){
-        if(rafId === null && wakeTimer === null && !document.hidden){
+        if(rafId === null && !document.hidden){
             rafId = requestAnimationFrame(loop);
         }
     }
 
     function stopLoop(){
-        clearTimeout(wakeTimer); wakeTimer = null; lastPaint = 0;
+        lastPaint = 0;
         if(rafId){
             cancelAnimationFrame(rafId);
             rafId = null;

@@ -117,7 +117,7 @@ test('fresh static responses, compression and downloads', async (t) => {
     t.diagnostic(`HTML Brotli requests: ${JSON.stringify(samples)}`);
   });
   await t.test('retired upload routes and scripts are no longer served', async () => {
-    for(const route of ['/api/drive','/api/drive/upload','/game/api/drive','/game/api/drive/upload','/drive.js','/drive-storage.js']) {
+    for(const route of ['/api/drive','/api/drive/upload','/drive.js','/drive-storage.js']) {
       assert.equal((await request(route)).status,404,route);
       assert.equal((await request(route,{},'POST')).status,route.endsWith('.js')?405:404,route);
     }
